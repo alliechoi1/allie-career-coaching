@@ -4,6 +4,26 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Allie Choijiljamba — Career Coaching for Mongolians in Australia</title>
+
+<!-- SEO -->
+<meta name="description" content="Career coaching for Mongolians in Australia. CV reviews, interview prep, LinkedIn optimisation and job search strategy from someone who's lived the same journey. Book a session with Allie Choijiljamba.">
+<meta name="keywords" content="career coaching Mongolians Australia, Mongolian career coach, CV review Australia, interview coaching, job search Australia, Mongolian professional">
+<meta name="author" content="Allie Choijiljamba">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph (Facebook, LinkedIn, WhatsApp) -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://alliechoijiljamba.github.io/">
+<meta property="og:title" content="Allie Choijiljamba — Career Coaching for Mongolians in Australia">
+<meta property="og:description" content="From international student to working professional — now I help others do the same. Practical, honest career guidance built on a decade of doing it myself.">
+<meta property="og:image" content="https://alliechoijiljamba.github.io/preview.jpg">
+<meta property="og:locale" content="en_AU">
+
+<!-- Twitter / X -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Allie Choijiljamba — Career Coaching for Mongolians in Australia">
+<meta name="twitter:description" content="From international student to working professional — now I help others do the same.">
+<meta name="twitter:image" content="https://alliechoijiljamba.github.io/preview.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Public+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
@@ -103,7 +123,7 @@ header{
   font-size:1.25rem;
   color:var(--ink);
 }
-.logo span{color:var(--gold-deep); font-style:italic; font-weight:500;}
+.logo span{color:var(--gold-deep); font-style:normal; font-weight:500;}
 .nav-links{
   display:flex;
   gap:30px;
@@ -141,7 +161,7 @@ header{
     overflow:hidden;
     transition:max-height 0.3s ease;
   }
-  .nav-links.open{max-height:340px;}
+  .nav-links.open{max-height:400px;}
   .nav-links a{padding:14px 28px; width:100%; border-bottom:1px solid var(--line);}
   .nav-cta{margin:14px 28px; text-align:center;}
   .nav-toggle{
@@ -208,7 +228,7 @@ header{
 }
 .hero h1 em{
   font-style:italic;
-  color:var(--teal-deep);
+  color:var(--gold);
   font-weight:500;
 }
 .hero p.lede{
@@ -232,7 +252,7 @@ header{
 }
 .btn-primary{
   background:var(--gold);
-  color:var(--ink);
+  color:var(--white);
 }
 .btn-primary:hover{background:var(--gold-deep); transform:translateY(-1px);}
 .btn-secondary{
@@ -246,7 +266,7 @@ header{
   border-radius:4px;
   overflow:hidden;
   aspect-ratio:4/5;
-  background:linear-gradient(160deg, var(--teal) 0%, var(--ink) 100%);
+  background:var(--paper-deep);
   display:flex;
   align-items:flex-end;
   padding:24px;
@@ -447,7 +467,7 @@ header{
   font-family:var(--mono);
   font-weight:700;
   font-size:1.1rem;
-  color:var(--ink);
+  color:var(--white);
   background:var(--gold);
   width:48px; height:48px;
   border-radius:50%;
@@ -540,7 +560,7 @@ header{
 .pricing .section-head p{color:var(--text-soft);}
 .price-grid{
   display:grid;
-  grid-template-columns:repeat(3,1fr);
+  grid-template-columns:repeat(4,1fr);
   gap:24px;
 }
 .price-card{
@@ -597,20 +617,474 @@ header{
   margin-bottom:18px;
 }
 .price-card.featured .for{color:rgba(255,255,255,0.78);}
-.price-card li{align-items:flex-start;}
+.price-card li{align-items:flex-start; gap:10px;}
 .price-card li::before{content:none;}
+.price-card li .check{
+  flex-shrink:0;
+  width:16px; height:16px;
+  margin-top:3px;
+  color:var(--gold);
+}
+.price-card.featured li .check{color:rgba(255,255,255,0.9);}
 .price-card .btn{width:100%; justify-content:center;}
 
 .price-card:not(.featured) .btn{background:transparent; border:1.5px solid var(--gold); color:var(--gold);}
 .price-card:not(.featured) .btn:hover{background:var(--gold); color:var(--white);}
 .price-card.featured .btn{background:var(--white); color:var(--gold);}
 .price-card.featured .btn:hover{background:var(--paper-deep);}
-@media (max-width:860px){
+@media (max-width:1100px){
+  .price-grid{grid-template-columns:repeat(2,1fr);}
+}
+@media (max-width:600px){
   .price-grid{grid-template-columns:1fr;}
   .price-card.featured{transform:none;}
 }
 
-/* ---------- BOOKING ---------- */
+/* ======= BLOG SECTION ======= */
+.blog{ background:var(--paper-deep); }
+
+.blog-filter{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-top:36px;
+  margin-bottom:40px;
+}
+.filter-btn{
+  padding:8px 18px;
+  border-radius:20px;
+  border:1.5px solid var(--line);
+  background:transparent;
+  color:var(--text-soft);
+  font-size:0.84rem;
+  font-weight:600;
+  cursor:pointer;
+  transition:all 0.2s;
+}
+.filter-btn:hover{ border-color:var(--gold); color:var(--gold); }
+.filter-btn.active{ background:var(--gold); color:var(--white); border-color:var(--gold); }
+
+.blog-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:28px;
+}
+.blog-card{
+  background:var(--white);
+  border-radius:8px;
+  border:1px solid var(--line);
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+  transition:transform 0.25s cubic-bezier(.22,1,.36,1), box-shadow 0.25s ease;
+}
+.blog-card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 14px 36px rgba(0,0,0,0.09);
+}
+.blog-card.hidden{ display:none; }
+.blog-card-top{
+  padding:28px 26px 20px;
+  flex:1;
+}
+.blog-meta{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-bottom:14px;
+}
+.blog-tag{
+  font-size:0.72rem;
+  font-weight:700;
+  letter-spacing:0.06em;
+  text-transform:uppercase;
+  padding:3px 10px;
+  border-radius:12px;
+  background:rgba(204,43,43,0.1);
+  color:var(--gold);
+}
+.blog-tag.tag-interview{ background:rgba(59,130,246,0.1); color:#2563eb; }
+.blog-tag.tag-linkedin{ background:rgba(16,185,129,0.1); color:#059669; }
+.blog-tag.tag-career{ background:rgba(139,92,246,0.1); color:#7c3aed; }
+.blog-tag.tag-visa{ background:rgba(245,158,11,0.1); color:#d97706; }
+.blog-tag.tag-networking{ background:rgba(236,72,153,0.1); color:#db2777; }
+.blog-read-time{
+  font-size:0.78rem;
+  color:var(--text-soft);
+}
+.blog-card h3{
+  font-size:1.05rem;
+  line-height:1.35;
+  margin-bottom:10px;
+  color:var(--ink);
+}
+.blog-card .blog-excerpt{
+  font-size:0.9rem;
+  color:var(--text-soft);
+  line-height:1.65;
+  margin-bottom:0;
+  display:block;
+}
+.blog-card-body{
+  padding:0 26px;
+  max-height:0;
+  overflow:hidden;
+  transition:max-height 0.45s cubic-bezier(.22,1,.36,1);
+}
+.blog-card.open .blog-card-body{ max-height:1200px; }
+.blog-card-body p{
+  font-size:0.9rem;
+  color:var(--text-soft);
+  line-height:1.75;
+  margin-bottom:14px;
+}
+.blog-card-body h4{
+  font-size:0.95rem;
+  color:var(--ink);
+  margin:18px 0 6px;
+}
+.blog-card-body ul{
+  margin-bottom:14px;
+  padding-left:0;
+  list-style:none;
+}
+.blog-card-body ul li{
+  font-size:0.88rem;
+  color:var(--text-soft);
+  line-height:1.65;
+  padding:5px 0;
+  border-top:1px solid var(--line);
+  display:flex;
+  gap:10px;
+}
+.blog-card-body ul li::before{
+  content:"→";
+  color:var(--gold);
+  flex-shrink:0;
+}
+.blog-card-footer{
+  padding:18px 26px 26px;
+  margin-top:auto;
+  border-top:1px solid var(--line);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+.blog-toggle{
+  background:none;
+  border:1.5px solid var(--gold);
+  color:var(--gold);
+  padding:8px 18px;
+  border-radius:4px;
+  font-size:0.84rem;
+  font-weight:600;
+  cursor:pointer;
+  transition:all 0.2s;
+}
+.blog-toggle:hover{ background:var(--gold); color:var(--white); }
+.blog-card.open .blog-toggle{ background:var(--gold); color:var(--white); }
+.blog-share{
+  font-size:0.78rem;
+  color:var(--text-soft);
+  cursor:pointer;
+  padding:6px;
+  border-radius:4px;
+  border:none;
+  background:none;
+  transition:color 0.2s;
+}
+.blog-share:hover{ color:var(--gold); }
+
+@media (max-width:900px){ .blog-grid{ grid-template-columns:1fr 1fr; } }
+@media (max-width:600px){ .blog-grid{ grid-template-columns:1fr; } .blog-filter{ gap:8px; } }
+
+/* ======= TRUST STRIP ======= */
+.trust-strip{
+  background:var(--ink);
+  padding:18px 0;
+  overflow:hidden;
+}
+.trust-strip-inner{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:0;
+  flex-wrap:wrap;
+}
+.trust-badge{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:10px 28px;
+  color:rgba(255,255,255,0.72);
+  font-size:0.8rem;
+  font-weight:600;
+  letter-spacing:0.04em;
+  text-transform:uppercase;
+  white-space:nowrap;
+  border-right:1px solid rgba(255,255,255,0.12);
+}
+.trust-badge:last-child{ border-right:none; }
+.trust-badge .badge-icon{ font-size:1.1rem; flex-shrink:0; }
+.trust-badge strong{ color:var(--white); font-weight:700; }
+
+/* ======= TIPS / RESOURCES ======= */
+.tips{ background:var(--paper); }
+.tips-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:28px;
+  margin-top:48px;
+}
+.tip-card{
+  background:var(--paper-deep);
+  border-radius:8px;
+  padding:32px 28px;
+  position:relative;
+  border:1px solid var(--line);
+  overflow:hidden;
+}
+.tip-card::before{
+  content:'';
+  position:absolute;
+  top:0; left:0; right:0;
+  height:3px;
+  background:var(--gold);
+}
+.tip-num{
+  font-family:var(--mono);
+  font-size:2.2rem;
+  font-weight:700;
+  color:rgba(204,43,43,0.12);
+  line-height:1;
+  margin-bottom:12px;
+}
+.tip-card h3{ font-size:1.05rem; margin-bottom:10px; color:var(--ink); line-height:1.35; }
+.tip-card p{ font-size:0.9rem; color:var(--text-soft); line-height:1.6; }
+.tip-fix{
+  margin-top:14px;
+  padding:10px 14px;
+  background:rgba(204,43,43,0.06);
+  border-radius:4px;
+  border-left:3px solid var(--gold);
+  font-size:0.84rem;
+  color:var(--gold-deep);
+  font-weight:600;
+}
+.tip-fix::before{ content:'✓ Fix: '; font-weight:700; }
+.tips-cta{ text-align:center; margin-top:44px; }
+.tips-cta p{ color:var(--text-soft); margin-bottom:18px; }
+
+/* ======= COOKIE BANNER ======= */
+#cookie-banner{
+  position:fixed;
+  bottom:0; left:0; right:0;
+  background:#111;
+  color:rgba(255,255,255,0.85);
+  padding:16px 28px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  z-index:999;
+  font-size:0.84rem;
+  flex-wrap:wrap;
+  transform:translateY(100%);
+  transition:transform 0.4s cubic-bezier(.22,1,.36,1);
+  box-shadow:0 -4px 24px rgba(0,0,0,0.15);
+}
+#cookie-banner.show{ transform:translateY(0); }
+#cookie-banner p{ margin:0; flex:1; min-width:200px; }
+#cookie-banner a{ color:var(--gold); text-decoration:underline; }
+#cookie-accept{
+  background:var(--gold); color:var(--white);
+  border:none; padding:9px 22px;
+  border-radius:4px; font-weight:600;
+  cursor:pointer; font-size:0.84rem;
+  white-space:nowrap; flex-shrink:0;
+  transition:background 0.2s;
+}
+#cookie-accept:hover{ background:var(--gold-deep); }
+
+/* ======= MOBILE ======= */
+@media (max-width:600px){
+  .wrap{ padding:0 16px; }
+  section{ padding:52px 0; }
+  .nav{ padding:0 16px; min-height:56px; }
+  .lang-btn{ padding:4px 8px; font-size:0.7rem; }
+  .hero{ padding-top:36px; padding-bottom:28px; }
+  .hero-grid{ grid-template-columns:1fr; gap:28px; }
+  .hero h1{ font-size:clamp(1.8rem,8vw,2.4rem); line-height:1.12; }
+  .hero p.lede{ font-size:0.95rem; }
+  .btn-row{ flex-direction:column; gap:10px; }
+  .btn-row .btn{ width:100%; justify-content:center; }
+  .hero-reel,.hero-photo{ max-width:100%; }
+  .trust-strip-inner{ flex-direction:column; }
+  .trust-badge{ border-right:none; border-bottom:1px solid rgba(255,255,255,0.1); width:100%; justify-content:center; padding:10px 16px; }
+  .trust-badge:last-child{ border-bottom:none; }
+  .about-grid{ grid-template-columns:1fr; gap:24px; }
+  .about-photo{ max-width:100%; aspect-ratio:4/3; }
+  .about-stats{ gap:20px; flex-wrap:wrap; }
+  .services-grid{ grid-template-columns:1fr; }
+  .test-grid{ grid-template-columns:1fr; }
+  .why-grid{ grid-template-columns:1fr; }
+  .tips-grid{ grid-template-columns:1fr; gap:18px; }
+  .price-grid{ grid-template-columns:1fr; }
+  .price-card.featured{ transform:none; }
+  .price-card{ padding:22px 18px; }
+  .how-grid{ grid-template-columns:1fr; gap:28px; }
+  .how-step:not(:last-child)::after{ display:none; }
+  .booking h2{ font-size:1.5rem; }
+  .contact-grid{ grid-template-columns:1fr; gap:28px; }
+  #back-top{ bottom:80px; right:16px; }
+  #cookie-banner{ flex-direction:column; align-items:flex-start; }
+  .section-head h2{ font-size:clamp(1.5rem,6vw,2.1rem); }
+  .price-grid{ grid-template-columns:1fr !important; }
+}
+@media (min-width:601px) and (max-width:860px){
+  .tips-grid{ grid-template-columns:1fr 1fr; gap:20px; }
+  .trust-strip-inner{ justify-content:flex-start; overflow-x:auto; flex-wrap:nowrap; padding:0 16px; scrollbar-width:none; }
+  .trust-strip-inner::-webkit-scrollbar{ display:none; }
+}
+
+/* ======= MODERN FEATURES ======= */
+
+/* Scroll progress bar */
+#progress-bar{
+  position:fixed;
+  top:0; left:0;
+  height:3px;
+  background:var(--gold);
+  width:0%;
+  z-index:200;
+  transition:width 0.1s linear;
+}
+
+/* Scroll reveal */
+.reveal{
+  opacity:0;
+  transform:translateY(32px);
+  transition:opacity 0.65s cubic-bezier(.22,1,.36,1), transform 0.65s cubic-bezier(.22,1,.36,1);
+}
+.reveal.visible{
+  opacity:1;
+  transform:none;
+}
+.reveal-delay-1{ transition-delay:0.1s; }
+.reveal-delay-2{ transition-delay:0.2s; }
+.reveal-delay-3{ transition-delay:0.3s; }
+.reveal-delay-4{ transition-delay:0.4s; }
+
+/* Active nav link */
+.nav-links a.nav-active{
+  color:var(--gold);
+  font-weight:600;
+}
+
+/* Hero animated gradient blob */
+.hero-blob{
+  position:absolute;
+  top:-80px; right:-60px;
+  width:520px; height:520px;
+  background:radial-gradient(circle, rgba(204,43,43,0.08) 0%, transparent 70%);
+  border-radius:50%;
+  pointer-events:none;
+  animation:blobFloat 7s ease-in-out infinite;
+  z-index:0;
+}
+.hero{ position:relative; overflow:hidden; }
+.hero .wrap{ position:relative; z-index:1; }
+
+@keyframes blobFloat{
+  0%,100%{ transform:translateY(0) scale(1); }
+  50%{ transform:translateY(-24px) scale(1.05); }
+}
+
+/* Card hover lift */
+.service-card, .price-card, .why-item, .test-card{
+  transition:transform 0.25s cubic-bezier(.22,1,.36,1), box-shadow 0.25s ease;
+}
+.service-card:hover, .price-card:hover, .why-item:hover{
+  transform:translateY(-6px);
+  box-shadow:0 16px 40px rgba(0,0,0,0.10);
+}
+.test-card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 12px 32px rgba(0,0,0,0.09);
+}
+
+/* Animated stat counters */
+.about-stats .stat strong{
+  display:block;
+  transition:color 0.3s;
+}
+
+/* Back to top button */
+#back-top{
+  position:fixed;
+  bottom:32px; right:32px;
+  width:44px; height:44px;
+  border-radius:50%;
+  background:var(--gold);
+  color:var(--white);
+  border:none;
+  font-size:1.2rem;
+  cursor:pointer;
+  display:flex; align-items:center; justify-content:center;
+  opacity:0;
+  transform:translateY(12px);
+  transition:opacity 0.3s, transform 0.3s;
+  z-index:100;
+  box-shadow:0 4px 16px rgba(204,43,43,0.35);
+}
+#back-top.show{
+  opacity:1;
+  transform:translateY(0);
+}
+#back-top:hover{
+  background:var(--gold-deep);
+  transform:translateY(-2px);
+}
+
+/* Smooth underline on nav links */
+.nav-links a{
+  position:relative;
+}
+.nav-links a:not(.nav-cta)::after{
+  content:'';
+  position:absolute;
+  left:0; bottom:-2px;
+  width:0; height:2px;
+  background:var(--gold);
+  transition:width 0.25s ease;
+}
+.nav-links a:not(.nav-cta):hover::after,
+.nav-links a.nav-active::after{
+  width:100%;
+}
+
+/* Hero headline word highlight animation */
+.hero h1 em{
+  background:linear-gradient(120deg, var(--gold) 0%, #e05555 100%);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  background-clip:text;
+  font-style:normal;
+}
+
+/* Pricing card featured glow */
+.price-card.featured{
+  box-shadow:0 8px 40px rgba(204,43,43,0.25);
+}
+.price-card.featured:hover{
+  box-shadow:0 20px 50px rgba(204,43,43,0.35);
+}
+
+/* Section divider lines */
+section + section{
+  border-top:1px solid var(--line);
+}
+
 .booking{
   background:var(--gold);
   color:var(--white);
@@ -745,9 +1219,40 @@ footer .logo{color:var(--white); margin-bottom:10px; display:inline-block;}
 }
 
 :focus-visible{outline:2px solid var(--teal-deep); outline-offset:2px;}
+
+/* ---- LANGUAGE TOGGLE ---- */
+.lang-toggle{
+  display:flex;
+  align-items:center;
+  background:var(--paper-deep);
+  border:1.5px solid var(--line);
+  border-radius:20px;
+  padding:3px;
+  gap:2px;
+  cursor:default;
+  flex-shrink:0;
+}
+.lang-btn{
+  padding:4px 12px;
+  border-radius:16px;
+  font-size:0.78rem;
+  font-weight:700;
+  letter-spacing:0.05em;
+  border:none;
+  background:transparent;
+  color:var(--text-soft);
+  cursor:pointer;
+  transition:all 0.2s;
+}
+.lang-btn.active{
+  background:var(--gold);
+  color:var(--white);
+}
 </style>
 </head>
 <body>
+<div id="progress-bar"></div>
+<button id="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
 
 <header>
   <nav class="nav">
@@ -758,15 +1263,21 @@ footer .logo{color:var(--white); margin-bottom:10px; display:inline-block;}
       <li><a href="#services">Services</a></li>
       <li><a href="#stories">Stories</a></li>
       <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#blog">Blog</a></li>
       <li><a href="#faq">FAQ</a></li>
       <li><a href="#contact">Contact</a></li>
       <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdr41b5ghauOpWjZ7RLoDr1uQiooZAJ8KB7VbhrSd3pGXXkFg/viewform" target="_blank" rel="noopener" class="nav-cta">Apply Now</a></li>
     </ul>
+    <div class="lang-toggle" role="group" aria-label="Language">
+      <button class="lang-btn active" id="btnEN" onclick="setLang('en')">EN</button>
+      <button class="lang-btn" id="btnMN" onclick="setLang('mn')">МН</button>
+    </div>
   </nav>
 </header>
 
 <!-- ============ HERO ============ -->
 <section class="hero">
+  <div class="hero-blob"></div>
   <div class="wrap">
     <div class="hero-grid">
       <div>
@@ -800,6 +1311,17 @@ footer .logo{color:var(--white); margin-bottom:10px; display:inline-block;}
     </div>
   </div>
 </section>
+
+<!-- ============ TRUST STRIP ============ -->
+<div class="trust-strip">
+  <div class="trust-strip-inner">
+    <div class="trust-badge"><span class="badge-icon">🏆</span><span><strong>Lambda 100</strong> Diaspora Edition</span></div>
+    <div class="trust-badge"><span class="badge-icon">🎓</span><span><strong>Macquarie University</strong> MBF Graduate</span></div>
+    <div class="trust-badge"><span class="badge-icon">📊</span><span><strong>CFA</strong> Level II Candidate</span></div>
+    <div class="trust-badge"><span class="badge-icon">🏢</span><span><strong>Paxon Group</strong> Consultant</span></div>
+    <div class="trust-badge"><span class="badge-icon">👥</span><span><strong>50+</strong> Clients Coached</span></div>
+  </div>
+</div>
 
 <!-- ============ HOW IT WORKS ============ -->
 <section class="how">
@@ -974,15 +1496,16 @@ footer .logo{color:var(--white); margin-bottom:10px; display:inline-block;}
       <div class="price-card">
         <div class="tier">One-time deep clarity session</div>
         <h3>First Step Session</h3>
-        <div class="price">$89 <span style="font-size:1rem; font-weight:400;">AUD</span></div>
+        <div class="price">$99 <span style="font-size:1rem; font-weight:400;">AUD</span></div>
         <p class="desc">For when you're stuck, uncertain, or not sure what your next move should be in Australia. We take a step back, map where you are, and turn confusion into a clear direction you can act on immediately.</p>
         <ul>
-          <li>💬 90-minute 1:1 strategy session</li>
-          <li>🧭 Career direction clarity (what to do next + what to stop doing)</li>
-          <li>📄 CV &amp; LinkedIn quick diagnostic (Australian market fit)</li>
-          <li>🎯 Clear positioning for your target roles</li>
-          <li>🧠 Honest feedback on your current approach</li>
-          <li>📌 Simple 7-day action plan after the session</li>
+          <li><svg class="check" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="8" r="7.5" stroke="currentColor" stroke-opacity="0.3"/><path d="M4.5 8L7 10.5L11.5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>90-minute 1:1 strategy session</li>
+          <li><svg class="check" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="8" r="7.5" stroke="currentColor" stroke-opacity="0.3"/><path d="M4.5 8L7 10.5L11.5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Career direction clarity (what to do next + what to stop doing)</li>
+          <li><svg class="check" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="8" r="7.5" stroke="currentColor" stroke-opacity="0.3"/><path d="M4.5 8L7 10.5L11.5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>CV &amp; LinkedIn quick diagnostic (Australian market fit)</li>
+          <li><svg class="check" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="8" r="7.5" stroke="currentColor" stroke-opacity="0.3"/><path d="M4.5 8L7 10.5L11.5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Clear positioning for your target roles</li>
+          <li><svg class="check" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="8" r="7.5" stroke="currentColor" stroke-opacity="0.3"/><path d="M4.5 8L7 10.5L11.5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Honest feedback on your current approach</li>
+          <li><svg class="check" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="8" r="7.5" stroke="currentColor" stroke-opacity="0.3"/><path d="M4.5 8L7 10.5L11.5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Simple 7-day action plan after the session</li>
+          <li><svg class="check" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="8" r="7.5" stroke="currentColor" stroke-opacity="0.3"/><path d="M4.5 8L7 10.5L11.5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><strong>Bonus:</strong> 1 follow-up session if you land an interview — practical tips &amp; prep tailored to that specific role</li>
         </ul>
         <p class="for">Perfect for: students, recent graduates, or anyone feeling "stuck in between"</p>
         <a href="https://docs.google.com/forms/d/e/1FAIpQLSdr41b5ghauOpWjZ7RLoDr1uQiooZAJ8KB7VbhrSd3pGXXkFg/viewform" target="_blank" rel="noopener" class="btn">Get started</a>
@@ -993,13 +1516,13 @@ footer .logo{color:var(--white); margin-bottom:10px; display:inline-block;}
         <div class="price">$300 <span style="font-size:1rem; font-weight:400;">AUD</span></div>
         <p class="desc">For those serious about landing a job or stepping up in the Australian market — but unsure how to position themselves properly. We don't just fix your CV. We rebuild how you present yourself, apply, and communicate your value.</p>
         <ul>
-          <li>📍 3 × 75-minute 1:1 coaching sessions</li>
-          <li>📄 Full CV rewrite guidance (Australia-standard positioning)</li>
-          <li>💼 LinkedIn optimization strategy</li>
-          <li>🎯 Job search strategy tailored to your field</li>
-          <li>🗣️ Mock interview + feedback session</li>
-          <li>🧠 How to answer "Australian-style" interview questions</li>
-          <li>📌 Step-by-step job application system you can repeat</li>
+          <li><svg class="check" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="8" r="7.5" stroke="currentColor" stroke-opacity="0.3"/><path d="M4.5 8L7 10.5L11.5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>3 × 75-minute 1:1 coaching sessions</li>
+          <li><svg class="check" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="8" r="7.5" stroke="currentColor" stroke-opacity="0.3"/><path d="M4.5 8L7 10.5L11.5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Full CV rewrite guidance (Australia-standard positioning)</li>
+          <li><svg class="check" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="8" r="7.5" stroke="currentColor" stroke-opacity="0.3"/><path d="M4.5 8L7 10.5L11.5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>LinkedIn optimization strategy</li>
+          <li><svg class="check" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="8" r="7.5" stroke="currentColor" stroke-opacity="0.3"/><path d="M4.5 8L7 10.5L11.5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Job search strategy tailored to your field</li>
+          <li><svg class="check" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="8" r="7.5" stroke="currentColor" stroke-opacity="0.3"/><path d="M4.5 8L7 10.5L11.5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Mock interview + feedback session</li>
+          <li><svg class="check" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="8" r="7.5" stroke="currentColor" stroke-opacity="0.3"/><path d="M4.5 8L7 10.5L11.5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>How to answer "Australian-style" interview questions</li>
+          <li><svg class="check" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="8" r="7.5" stroke="currentColor" stroke-opacity="0.3"/><path d="M4.5 8L7 10.5L11.5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Step-by-step job application system you can repeat</li>
         </ul>
         <p class="for">Perfect for: job seekers actively applying or preparing to apply in Australia</p>
         <a href="https://docs.google.com/forms/d/e/1FAIpQLSdr41b5ghauOpWjZ7RLoDr1uQiooZAJ8KB7VbhrSd3pGXXkFg/viewform" target="_blank" rel="noopener" class="btn">Get started</a>
@@ -1010,17 +1533,269 @@ footer .logo{color:var(--white); margin-bottom:10px; display:inline-block;}
         <div class="price">$449 <span style="font-size:1rem; font-weight:400;">AUD</span></div>
         <p class="desc">For people who don't just want a job — they want momentum, structure, and accountability while building their career in Australia. This is where we work together until things actually start moving.</p>
         <ul>
-          <li>📍 4 × 75-minute 1:1 sessions (over 4–6 weeks)</li>
-          <li>📄 CV + LinkedIn refinement until market-ready</li>
-          <li>🎯 Personal career roadmap (6–12 months direction)</li>
-          <li>🗣️ Mock interviews + real-time feedback</li>
-          <li>💬 WhatsApp/email support between sessions</li>
-          <li>🔄 Weekly job search review &amp; adjustments</li>
-          <li>🌐 Networking &amp; positioning guidance</li>
+          <li><svg class="check" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="8" r="7.5" stroke="currentColor" stroke-opacity="0.3"/><path d="M4.5 8L7 10.5L11.5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>4 × 75-minute 1:1 sessions (over 4–6 weeks)</li>
+          <li><svg class="check" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="8" r="7.5" stroke="currentColor" stroke-opacity="0.3"/><path d="M4.5 8L7 10.5L11.5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>CV + LinkedIn refinement until market-ready</li>
+          <li><svg class="check" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="8" r="7.5" stroke="currentColor" stroke-opacity="0.3"/><path d="M4.5 8L7 10.5L11.5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Personal career roadmap (6–12 months direction)</li>
+          <li><svg class="check" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="8" r="7.5" stroke="currentColor" stroke-opacity="0.3"/><path d="M4.5 8L7 10.5L11.5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Mock interviews + real-time feedback</li>
+          <li><svg class="check" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="8" r="7.5" stroke="currentColor" stroke-opacity="0.3"/><path d="M4.5 8L7 10.5L11.5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>WhatsApp/email support between sessions</li>
+          <li><svg class="check" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="8" r="7.5" stroke="currentColor" stroke-opacity="0.3"/><path d="M4.5 8L7 10.5L11.5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Weekly job search review &amp; adjustments</li>
+          <li><svg class="check" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="8" r="7.5" stroke="currentColor" stroke-opacity="0.3"/><path d="M4.5 8L7 10.5L11.5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Networking &amp; positioning guidance</li>
         </ul>
         <p class="for">Perfect for: professionals or graduates serious about building a stable career path in Australia</p>
         <a href="https://docs.google.com/forms/d/e/1FAIpQLSdr41b5ghauOpWjZ7RLoDr1uQiooZAJ8KB7VbhrSd3pGXXkFg/viewform" target="_blank" rel="noopener" class="btn">Get started</a>
       </div>
+      <div class="price-card">
+        <div class="tier">6-week communication program</div>
+        <h3>Speaking Confidence</h3>
+        <div class="price">$500 <span style="font-size:1rem; font-weight:400;">AUD</span></div>
+        <p class="desc">Build the speaking skills that open doors — whether it's a job interview, a team meeting, or simply expressing yourself clearly in a professional setting. Twice a week for 6 weeks, we work on your voice, presence, and confidence.</p>
+        <ul>
+          <li><svg class="check" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="8" r="7.5" stroke="currentColor" stroke-opacity="0.3"/><path d="M4.5 8L7 10.5L11.5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>12 × 1-hour sessions (2 per week, 6 weeks)</li>
+          <li><svg class="check" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="8" r="7.5" stroke="currentColor" stroke-opacity="0.3"/><path d="M4.5 8L7 10.5L11.5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Interview speaking skills — answers that land</li>
+          <li><svg class="check" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="8" r="7.5" stroke="currentColor" stroke-opacity="0.3"/><path d="M4.5 8L7 10.5L11.5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Team meeting engagement &amp; contribution</li>
+          <li><svg class="check" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="8" r="7.5" stroke="currentColor" stroke-opacity="0.3"/><path d="M4.5 8L7 10.5L11.5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Expressing ideas clearly &amp; confidently in English</li>
+          <li><svg class="check" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="8" r="7.5" stroke="currentColor" stroke-opacity="0.3"/><path d="M4.5 8L7 10.5L11.5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Professional tone &amp; workplace communication</li>
+          <li><svg class="check" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="8" r="7.5" stroke="currentColor" stroke-opacity="0.3"/><path d="M4.5 8L7 10.5L11.5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Real practice: mock interviews &amp; presentations</li>
+          <li><svg class="check" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="8" r="7.5" stroke="currentColor" stroke-opacity="0.3"/><path d="M4.5 8L7 10.5L11.5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Personalised feedback after every session</li>
+        </ul>
+        <p class="for">Perfect for: anyone who wants to be heard, taken seriously, and remembered in Australian professional settings</p>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdr41b5ghauOpWjZ7RLoDr1uQiooZAJ8KB7VbhrSd3pGXXkFg/viewform" target="_blank" rel="noopener" class="btn">Get started</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BLOG ============ -->
+<section class="blog" id="blog">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Free resources</p>
+      <h2>Guides, tips & real talk for Mongolians in Australia</h2>
+      <p>No fluff. No generic advice. Every article is written from lived experience navigating the Australian job market as a Mongolian.</p>
+    </div>
+
+    <div class="blog-filter">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="cv">CV & Resume</button>
+      <button class="filter-btn" data-filter="interview">Interview</button>
+      <button class="filter-btn" data-filter="linkedin">LinkedIn</button>
+      <button class="filter-btn" data-filter="career">Career Strategy</button>
+      <button class="filter-btn" data-filter="visa">Visa & Work Rights</button>
+      <button class="filter-btn" data-filter="networking">Networking</button>
+    </div>
+
+    <div class="blog-grid">
+
+      <!-- Article 1 -->
+      <div class="blog-card reveal" data-category="cv">
+        <div class="blog-card-top">
+          <div class="blog-meta">
+            <span class="blog-tag">CV & Resume</span>
+            <span class="blog-read-time">5 min read</span>
+          </div>
+          <h3>How to write an Australian-style CV from scratch</h3>
+          <p class="blog-excerpt">Australian CVs follow different rules from what you learned in Mongolia. Here's exactly what to include, what to cut, and how to make it land.</p>
+        </div>
+        <div class="blog-card-body">
+          <p>When I first applied for jobs in Australia, I sent out the same CV I'd used in Mongolia. Weeks passed. Nothing. It wasn't because I wasn't qualified — it was because my CV was speaking the wrong language.</p>
+          <h4>What Australian CVs must have</h4>
+          <ul>
+            <li>Full name, email, phone, LinkedIn URL, and city (not full address)</li>
+            <li>A 2–4 sentence professional summary at the top tailored to the role</li>
+            <li>Work experience in reverse chronological order with bullet achievements (not duties)</li>
+            <li>Education with your GPA if it's strong (3.0+ is worth including)</li>
+            <li>Relevant skills section — especially technical tools if you're in finance, tech or analytics</li>
+          </ul>
+          <h4>What to remove</h4>
+          <ul>
+            <li>Your photo — not expected in Australia and can invite unconscious bias</li>
+            <li>Date of birth, marital status, nationality — illegal for employers to discriminate on these</li>
+            <li>References on the CV itself — "references available on request" is enough</li>
+            <li>Anything older than 10 years unless it's directly relevant</li>
+          </ul>
+          <h4>The achievement formula that works</h4>
+          <p>Instead of: "Responsible for preparing financial reports" — write: "Prepared monthly financial reports for 3 business units, reducing reporting time by 20% through process improvements." The formula: Action verb + what you did + the result or scale.</p>
+          <p>Finally, always add a one-line description of your employer if it's a Mongolian company. Recruiters here won't know them: "TDB Mongolia — largest commercial bank in Mongolia, 2,000+ employees."</p>
+        </div>
+        <div class="blog-card-footer">
+          <button class="blog-toggle" onclick="toggleBlog(this)">Read more</button>
+          <button class="blog-share" onclick="copyLink('cv-guide')" title="Copy link">🔗 Share</button>
+        </div>
+      </div>
+
+      <!-- Article 2 -->
+      <div class="blog-card reveal reveal-delay-1" data-category="interview">
+        <div class="blog-card-top">
+          <div class="blog-meta">
+            <span class="blog-tag tag-interview">Interview</span>
+            <span class="blog-read-time">6 min read</span>
+          </div>
+          <h3>The STAR method: how Australians expect you to answer interview questions</h3>
+          <p class="blog-excerpt">Australian interviewers ask behavioural questions — and they expect a very specific type of answer. Most Mongolian candidates lose points here without knowing why.</p>
+        </div>
+        <div class="blog-card-body">
+          <p>Behavioural questions start with phrases like "Tell me about a time when..." or "Give me an example of...". They're common in almost every Australian interview, from graduate roles to senior positions. The expected format is STAR.</p>
+          <h4>What STAR means</h4>
+          <ul>
+            <li><strong>Situation</strong> — briefly set the scene. Where were you, what was the context?</li>
+            <li><strong>Task</strong> — what was your specific responsibility in that situation?</li>
+            <li><strong>Action</strong> — what did YOU do? (This is the most important part — be specific)</li>
+            <li><strong>Result</strong> — what was the outcome? Quantify it if you can.</li>
+          </ul>
+          <h4>A common mistake Mongolian candidates make</h4>
+          <p>Many candidates describe what "we" did as a team, not what they personally did. Australians want to know your individual contribution. Replace "we solved the problem" with "I identified the issue and proposed the solution, which the team implemented."</p>
+          <h4>Practice questions to prepare with</h4>
+          <ul>
+            <li>Tell me about a time you had to deal with a difficult colleague or client</li>
+            <li>Describe a situation where you had to meet a tight deadline</li>
+            <li>Give me an example of when you took initiative on a project</li>
+            <li>Tell me about a mistake you made and what you learned from it</li>
+          </ul>
+          <p>Prepare 6–8 solid STAR stories from your experience. Most questions can be answered with a well-prepared story repositioned for the question asked.</p>
+        </div>
+        <div class="blog-card-footer">
+          <button class="blog-toggle" onclick="toggleBlog(this)">Read more</button>
+          <button class="blog-share" onclick="copyLink('star-method')" title="Copy link">🔗 Share</button>
+        </div>
+      </div>
+
+      <!-- Article 3 -->
+      <div class="blog-card reveal reveal-delay-2" data-category="linkedin">
+        <div class="blog-card-top">
+          <div class="blog-meta">
+            <span class="blog-tag tag-linkedin">LinkedIn</span>
+            <span class="blog-read-time">4 min read</span>
+          </div>
+          <h3>How to get noticed by Australian recruiters on LinkedIn</h3>
+          <p class="blog-excerpt">Most Mongolians use LinkedIn as an online CV and nothing more. Here's how to actually use it to get recruiters coming to you.</p>
+        </div>
+        <div class="blog-card-body">
+          <p>LinkedIn works differently to what most people think. It's not just a profile — it's a search engine. Recruiters search for candidates using keywords, location, and filters. If your profile isn't optimised, you're invisible.</p>
+          <h4>The three most important sections</h4>
+          <ul>
+            <li><strong>Headline</strong> — don't just write your job title. Write who you are and what you offer: "Financial Analyst | CFA Candidate | Specialised in credit risk & data analytics"</li>
+            <li><strong>About section</strong> — write in first person, tell your story, mention your specialisation and what you're looking for. 3–5 paragraphs.</li>
+            <li><strong>Experience bullets</strong> — same achievement format as your CV. Numbers, outcomes, impact.</li>
+          </ul>
+          <h4>Turn on "Open to Work"</h4>
+          <p>Set it to visible to recruiters only (not publicly) if you're currently employed. This puts you in recruiter searches automatically.</p>
+          <h4>Engage, don't just apply</h4>
+          <ul>
+            <li>Comment thoughtfully on posts from people in your industry — not just "great post!"</li>
+            <li>Post once a week about something you've learned or observed in your field</li>
+            <li>Connect with hiring managers after applying, with a short personalised note</li>
+          </ul>
+          <p>I've seen clients go from zero recruiter messages to multiple inbound enquiries just by rewriting their headline and About section. It makes that much difference.</p>
+        </div>
+        <div class="blog-card-footer">
+          <button class="blog-toggle" onclick="toggleBlog(this)">Read more</button>
+          <button class="blog-share" onclick="copyLink('linkedin-guide')" title="Copy link">🔗 Share</button>
+        </div>
+      </div>
+
+      <!-- Article 4 -->
+      <div class="blog-card reveal" data-category="career">
+        <div class="blog-card-top">
+          <div class="blog-meta">
+            <span class="blog-tag tag-career">Career Strategy</span>
+            <span class="blog-read-time">7 min read</span>
+          </div>
+          <h3>How to pivot careers in Australia — what I learned from doing it three times</h3>
+          <p class="blog-excerpt">I changed industries three times in Australia. Each time felt risky. Here's what actually made each pivot work.</p>
+        </div>
+        <div class="blog-card-body">
+          <p>My first role in Australia was in mortgage broking. Then I moved into financial analysis at a global tech company. Then into consulting on government infrastructure projects. Three different environments, three different skillsets to communicate. Here's the honest breakdown of what worked.</p>
+          <h4>Principle 1: Your story has to make sense</h4>
+          <p>Every career pivot needs a logical narrative. You can't just say "I wanted a change." You need to explain: what skills transfer, why this new direction excites you, and why you're a credible candidate despite not having direct experience. Spend time crafting this story before you apply to anything.</p>
+          <h4>Principle 2: Bridge the gap with visible proof</h4>
+          <ul>
+            <li>Take a relevant short course or certification (Coursera, CFA, LinkedIn Learning)</li>
+            <li>Do a project you can show — even a personal one counts</li>
+            <li>Volunteer or take contract work in the new field</li>
+            <li>Write about the field on LinkedIn to signal genuine interest</li>
+          </ul>
+          <h4>Principle 3: Target smaller companies first</h4>
+          <p>Large Australian corporates tend to hire for specific experience. Smaller companies are more likely to hire for potential and attitude. Get your first foot in the door there, build local experience, then move up.</p>
+          <h4>Principle 4: Be honest about the trade-off</h4>
+          <p>Most pivots involve a short-term step down in title or salary to get into a new field. That's real. Decide early if you're willing to make that trade, because if you're not, the pivot will feel impossible. For me, the long-term payoff has been worth every short-term sacrifice.</p>
+        </div>
+        <div class="blog-card-footer">
+          <button class="blog-toggle" onclick="toggleBlog(this)">Read more</button>
+          <button class="blog-share" onclick="copyLink('career-pivot')" title="Copy link">🔗 Share</button>
+        </div>
+      </div>
+
+      <!-- Article 5 -->
+      <div class="blog-card reveal reveal-delay-1" data-category="visa">
+        <div class="blog-card-top">
+          <div class="blog-meta">
+            <span class="blog-tag tag-visa">Visa & Work Rights</span>
+            <span class="blog-read-time">5 min read</span>
+          </div>
+          <h3>Work rights in Australia: what every Mongolian student and graduate needs to know</h3>
+          <p class="blog-excerpt">Visa conditions affect every career decision you make. Understanding your rights early changes how you plan — and what opportunities you can actually take.</p>
+        </div>
+        <div class="blog-card-body">
+          <p>I'm not a migration agent and this isn't legal advice — but this is what I wish someone had explained to me clearly when I first arrived. Understanding your visa conditions shapes your entire career strategy.</p>
+          <h4>Student visa (Subclass 500)</h4>
+          <ul>
+            <li>You can work up to 48 hours per fortnight while your course is in session</li>
+            <li>Unlimited hours during official course breaks</li>
+            <li>Your employer should ask for your visa conditions before hiring — it's legal for them to check</li>
+            <li>Unpaid internships count toward your work hour limit if they're with a for-profit business</li>
+          </ul>
+          <h4>Graduate visa (Subclass 485)</h4>
+          <ul>
+            <li>Full work rights — no hour restrictions</li>
+            <li>Valid for 2–4 years depending on where you studied in Australia</li>
+            <li>This is your window to build Australian experience and transition to employer-sponsored or PR pathways</li>
+            <li>Start applying for graduate roles 6 months before you finish your degree</li>
+          </ul>
+          <h4>What this means for your career strategy</h4>
+          <p>If you're on a 485, the clock is ticking. Use this time to build meaningful Australian experience, not just any job. Target roles in your field that could lead to sponsorship or skills assessment for PR. I factor all of this into career coaching sessions — because a strategy that ignores your visa isn't a strategy.</p>
+        </div>
+        <div class="blog-card-footer">
+          <button class="blog-toggle" onclick="toggleBlog(this)">Read more</button>
+          <button class="blog-share" onclick="copyLink('visa-guide')" title="Copy link">🔗 Share</button>
+        </div>
+      </div>
+
+      <!-- Article 6 -->
+      <div class="blog-card reveal reveal-delay-2" data-category="networking">
+        <div class="blog-card-top">
+          <div class="blog-meta">
+            <span class="blog-tag tag-networking">Networking</span>
+            <span class="blog-read-time">4 min read</span>
+          </div>
+          <h3>Networking in Australia: why it feels different and how to do it without cringing</h3>
+          <p class="blog-excerpt">In Mongolia, relationships are built over time through trust and mutual obligation. Australia has a different style — more transactional, more open, and surprisingly approachable once you know the rules.</p>
+        </div>
+        <div class="blog-card-body">
+          <p>When I first tried to "network" in Australia I felt like I was bothering people. I was wrong. Australians — especially in professional settings — are generally open to a genuine, respectful approach. The key word is genuine.</p>
+          <h4>Start with informational interviews</h4>
+          <p>An informational interview is a 20-minute coffee chat (virtual or in person) where you ask someone about their career path — not for a job. It sounds strange but it works. Most professionals say yes when asked respectfully, especially if you've done some research on their background first.</p>
+          <h4>What to say on LinkedIn when reaching out</h4>
+          <ul>
+            <li>Keep it short — 3–4 sentences maximum</li>
+            <li>Say why you're reaching out specifically to them (not a copy-paste)</li>
+            <li>Ask for a 15–20 minute chat, not for a job</li>
+            <li>Make it easy for them to say yes or no</li>
+          </ul>
+          <h4>Events worth attending</h4>
+          <ul>
+            <li>Eventbrite professional events in your city — many are free</li>
+            <li>Your university alumni events — Macquarie, UNSW, Melbourne all run them</li>
+            <li>Industry association meetups (CFA Society, FINSIA for finance)</li>
+            <li>Mongolian professional community events — don't underestimate your own network</li>
+          </ul>
+          <p>The mindset shift that helped me most: networking isn't about asking for favours. It's about building relationships before you need them. Plant seeds now, even when you don't need anything yet.</p>
+        </div>
+        <div class="blog-card-footer">
+          <button class="blog-toggle" onclick="toggleBlog(this)">Read more</button>
+          <button class="blog-share" onclick="copyLink('networking-guide')" title="Copy link">🔗 Share</button>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -1127,6 +1902,11 @@ footer .logo{color:var(--white); margin-bottom:10px; display:inline-block;}
   </div>
 </footer>
 
+<div id="cookie-banner">
+  <p>This website uses cookies to understand how visitors use it. No personal data is sold or shared. <a href="#" onclick="document.getElementById('cookie-banner').style.display='none'; return false;">Privacy policy</a>.</p>
+  <button id="cookie-accept" onclick="acceptCookies()">Got it</button>
+</div>
+
 <script>
   const navToggle = document.getElementById('navToggle');
   const navLinks = document.getElementById('navLinks');
@@ -1148,6 +1928,513 @@ footer .logo{color:var(--white); margin-bottom:10px; display:inline-block;}
       }
     });
   });
+
+  // ---- SCROLL PROGRESS BAR ----
+  const progressBar = document.getElementById('progress-bar');
+  const backTop = document.getElementById('back-top');
+
+  window.addEventListener('scroll', () => {
+    const scrolled = window.scrollY;
+    const total = document.body.scrollHeight - window.innerHeight;
+    progressBar.style.width = (scrolled / total * 100) + '%';
+    backTop.classList.toggle('show', scrolled > 400);
+    updateActiveNav();
+  }, { passive: true });
+
+  // ---- SCROLL REVEAL ----
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if(e.isIntersecting){ e.target.classList.add('visible'); revealObserver.unobserve(e.target); }
+    });
+  }, { threshold: 0.12 });
+
+  // Add reveal to section headings and cards
+  document.querySelectorAll(
+    '.section-head, .how-step, .service-card, .price-card, .why-item, .test-card, .about-grid, .contact-grid, .faq-item, .booking .wrap > *, .blog-card, .tip-card'
+  ).forEach((el, i) => {
+    el.classList.add('reveal');
+    if(i % 4 === 1) el.classList.add('reveal-delay-1');
+    if(i % 4 === 2) el.classList.add('reveal-delay-2');
+    if(i % 4 === 3) el.classList.add('reveal-delay-3');
+    revealObserver.observe(el);
+  });
+
+  // ---- ANIMATED STAT COUNTERS ----
+  const stats = document.querySelectorAll('.about-stats .stat strong');
+  const statTargets = ['6', '2', '50'];
+  const statSuffixes = ['+\u00a0yrs', '', '+'];
+  let countersRun = false;
+
+  function runCounters(){
+    if(countersRun) return;
+    countersRun = true;
+    stats.forEach((el, i) => {
+      const target = parseInt(statTargets[i]);
+      const suffix = statSuffixes[i];
+      let current = 0;
+      const step = Math.max(1, Math.floor(target / 30));
+      const timer = setInterval(() => {
+        current = Math.min(current + step, target);
+        if(i === 1) { el.textContent = 'CFA II'; clearInterval(timer); return; }
+        el.textContent = current + suffix;
+        if(current >= target) clearInterval(timer);
+      }, 40);
+    });
+  }
+
+  const statsObserver = new IntersectionObserver(entries => {
+    if(entries[0].isIntersecting) runCounters();
+  }, { threshold: 0.5 });
+  const statsEl = document.querySelector('.about-stats');
+  if(statsEl) statsObserver.observe(statsEl);
+
+  // ---- ACTIVE NAV ----
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks2 = document.querySelectorAll('.nav-links a[href^="#"]');
+
+  function updateActiveNav(){
+    let current = '';
+    sections.forEach(s => {
+      if(window.scrollY >= s.offsetTop - 120) current = s.id;
+    });
+    navLinks2.forEach(a => {
+      a.classList.toggle('nav-active', a.getAttribute('href') === '#' + current);
+    });
+  }
+
+  // ---- COOKIE BANNER ----
+  // ---- BLOG ----
+  function toggleBlog(btn){
+    const card = btn.closest('.blog-card');
+    const isOpen = card.classList.toggle('open');
+    btn.textContent = isOpen ? 'Read less' : 'Read more';
+  }
+
+  function copyLink(slug){
+    const url = window.location.href.split('#')[0] + '#blog';
+    navigator.clipboard.writeText(url).then(() => {
+      const prev = event.target.textContent;
+      event.target.textContent = '✓ Copied!';
+      setTimeout(() => event.target.textContent = prev, 1800);
+    });
+  }
+
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.dataset.filter;
+      document.querySelectorAll('.blog-card').forEach(card => {
+        const match = filter === 'all' || card.dataset.category === filter;
+        card.classList.toggle('hidden', !match);
+      });
+    });
+  });
+
+  function acceptCookies(){
+    localStorage.setItem('cookie_ok','1');
+    document.getElementById('cookie-banner').classList.remove('show');
+  }
+  if(!localStorage.getItem('cookie_ok')){
+    setTimeout(() => document.getElementById('cookie-banner').classList.add('show'), 1800);
+  }
+
+  const T = {
+    en: {
+      // Nav
+      'nav-about': 'About', 'nav-services': 'Services', 'nav-stories': 'Stories',
+      'nav-pricing': 'Pricing', 'nav-faq': 'FAQ', 'nav-contact': 'Contact', 'nav-cta': 'Apply Now',
+      // Hero
+      'hero-eyebrow': 'Career coaching · Mongolians in Australia',
+      'hero-h1': 'From international student<br>to <em>working professional</em> —<br>now I help others do the same.',
+      'hero-lede': 'The career support I wish I\'d had when I first landed in Sydney. Practical, honest guidance for Mongolians navigating the Australian job market — resumes, interviews, visas and career strategy — built on a decade of doing it myself.',
+      'hero-btn-primary': 'Book your spot',
+      'hero-btn-secondary': 'See how I can help',
+      'hero-reel-tag': 'Watch on Instagram',
+      'hero-cap': 'The same route, mapped — so you don\'t have to figure it out alone.',
+      // How it works
+      'how-eyebrow': 'How it works',
+      'how-h2': 'Four steps, start to finish',
+      'how-1-h3': 'Fill out the form', 'how-1-p': 'Tell me your background and what you\'re working toward.',
+      'how-2-h3': 'Get a booking link', 'how-2-p': 'Once I\'ve reviewed your form, you\'ll get a link to pick your session times.',
+      'how-3-h3': 'Send your CV and LinkedIn', 'how-3-p': 'So I can prep before we meet.',
+      'how-4-h3': 'We meet on Google Meet', 'how-4-p': 'You get notes and action items after every session.',
+      // About
+      'about-eyebrow': 'About me',
+      'about-h2': 'I\'ve walked the same path.',
+      'about-p1': 'I grew up in rural Mongolia, taught myself English, and moved to Sydney to study a Master of Business — Finance at Macquarie University. I know what it feels like to arrive somewhere new, not know how things work, and still have to figure it all out.',
+      'about-p2': 'After graduating, I pivoted my career three times — from mortgage broking, to analyst at Equifax Australia, to consultant at Paxon Group working on government and private infrastructure. I became the person my Mongolian friends called when they had a career question. Now I\'ve made that official.',
+      'about-p3': 'Sessions are in Mongolian or English — whatever helps you think more clearly.',
+      'about-stat1-n': '6+ yrs', 'about-stat1-l': 'finance & advisory',
+      'about-stat2-n': 'CFA II', 'about-stat2-l': 'candidate',
+      'about-stat3-n': '50+', 'about-stat3-l': 'CV & interview sessions',
+      // Services
+      'svc-eyebrow': 'What I help with',
+      'svc-h2': 'Six areas, one goal: getting you working.',
+      'svc-1-h3': 'Resume & Cover Letter', 'svc-1-p': 'Australian-format CVs that pass ATS filters and impress hiring managers in your target industry.',
+      'svc-2-h3': 'LinkedIn Optimisation', 'svc-2-p': 'Profile rewrites, connection strategy, and how to show up when recruiters are searching.',
+      'svc-3-h3': 'Interview Preparation', 'svc-3-p': 'Mock interviews, STAR method coaching, and how to answer the questions Australians actually ask.',
+      'svc-4-h3': 'Career Strategy & Direction', 'svc-4-p': 'Mapping your experience to Australian pathways, including pivot planning and realistic timelines.',
+      'svc-5-h3': 'Industry Networking Guidance', 'svc-5-p': 'How to approach Mongolian and Australian professional communities, attend events, and ask for informational chats without dread.',
+      'svc-6-h3': 'Breaking Into Finance & Advisory', 'svc-6-p': 'Specialist guidance for finance, banking and consulting roles — from CFA pathway questions to landing your first analyst job in Australia.',
+      // Testimonials
+      'test-eyebrow': 'Success stories',
+      'test-h2': 'From their words, not mine',
+      'test-sub': 'Coaching is done remotely over Google Meet — wherever you are in Australia.',
+      'test-1-q': '"I\'d sent out 80 applications with zero replies. After we rebuilt my resume and practiced interviews, I had two offers within six weeks."',
+      'test-1-role': 'Accounting graduate → Sydney',
+      'test-2-q': '"Tuya helped me understand my visa timeline properly. I stopped panicking and made a plan that actually fit my situation."',
+      'test-2-role': 'IT graduate → Melbourne',
+      'test-3-q': '"As a fellow Mongolian, she just got it — the things I was too embarrassed to ask anyone else. Worth every dollar."',
+      'test-3-role': 'Marketing pivot → Brisbane',
+      // Why
+      'why-eyebrow': 'Why work with me',
+      'why-h2': 'Coaching that understands both sides',
+      'why-1-h3': 'I\'ve lived your exact starting point', 'why-1-p': 'Same path — international student, same questions, same homesickness. No generic advice copied from a Western career blog.',
+      'why-2-h3': 'Real finance & advisory experience', 'why-2-p': 'I\'ve successfully pivoted my career three times in Australia — from the mortgage broking sector, to analyst at an international technology company, to consultant delivering real impact on government and private infrastructure projects. That lived experience means I know exactly what it takes to reposition yourself and get shortlisted in a new industry.',
+      'why-3-h3': 'Visa-literate advice', 'why-3-p': 'I factor in your visa stage and rights into every recommendation — career advice that ignores this isn\'t useful advice.',
+      'why-4-h3': 'Mongolian-friendly pricing & language', 'why-4-p': 'Sessions in Mongolian or English, with packages priced fairly for students and new graduates, not corporate executives.',
+      // Pricing
+      'pricing-eyebrow': 'Packages & pricing',
+      'pricing-h2': 'Choose what fits where you are',
+      'pricing-sub': 'All packages start with a short application form, so I can understand your situation before we begin.',
+      'p1-tier': 'One-time deep clarity session', 'p1-h3': 'First Step Session',
+      'p1-desc': 'For when you\'re stuck, uncertain, or not sure what your next move should be in Australia. We take a step back, map where you are, and turn confusion into a clear direction you can act on immediately.',
+      'p1-f1': '90-minute 1:1 strategy session', 'p1-f2': 'Career direction clarity (what to do next + what to stop doing)',
+      'p1-f3': 'CV & LinkedIn quick diagnostic (Australian market fit)', 'p1-f4': 'Clear positioning for your target roles',
+      'p1-f5': 'Honest feedback on your current approach', 'p1-f6': 'Simple 7-day action plan after the session',
+      'p1-f7': '<strong>Bonus:</strong> 1 follow-up session if you land an interview — practical tips & prep tailored to that specific role',
+      'p1-for': 'Perfect for: students, recent graduates, or anyone feeling "stuck in between"', 'p1-btn': 'Get started',
+      'p2-tier': '3-session transformation program', 'p2-h3': 'Australia Job Accelerator',
+      'p2-desc': 'For those serious about landing a job or stepping up in the Australian market — but unsure how to position themselves properly. We don\'t just fix your CV. We rebuild how you present yourself, apply, and communicate your value.',
+      'p2-f1': '3 × 75-minute 1:1 coaching sessions', 'p2-f2': 'Full CV rewrite guidance (Australia-standard positioning)',
+      'p2-f3': 'LinkedIn optimization strategy', 'p2-f4': 'Job search strategy tailored to your field',
+      'p2-f5': 'Mock interview + feedback session', 'p2-f6': 'How to answer "Australian-style" interview questions',
+      'p2-f7': 'Step-by-step job application system you can repeat',
+      'p2-for': 'Perfect for: job seekers actively applying or preparing to apply in Australia', 'p2-btn': 'Get started',
+      'p3-tier': 'Ongoing support for real career progress', 'p3-h3': 'Career Breakthrough Partnership',
+      'p3-desc': 'For people who don\'t just want a job — they want momentum, structure, and accountability while building their career in Australia. This is where we work together until things actually start moving.',
+      'p3-f1': '4 × 75-minute 1:1 sessions (over 4–6 weeks)', 'p3-f2': 'CV + LinkedIn refinement until market-ready',
+      'p3-f3': 'Personal career roadmap (6–12 months direction)', 'p3-f4': 'Mock interviews + real-time feedback',
+      'p3-f5': 'WhatsApp/email support between sessions', 'p3-f6': 'Weekly job search review & adjustments',
+      'p3-f7': 'Networking & positioning guidance',
+      'p3-for': 'Perfect for: professionals or graduates serious about building a stable career path in Australia', 'p3-btn': 'Get started',
+      'p4-tier': '6-week communication program', 'p4-h3': 'Speaking Confidence',
+      'p4-desc': 'Build the speaking skills that open doors — whether it\'s a job interview, a team meeting, or simply expressing yourself clearly in a professional setting. Twice a week for 6 weeks, we work on your voice, presence, and confidence.',
+      'p4-f1': '12 × 1-hour sessions (2 per week, 6 weeks)', 'p4-f2': 'Interview speaking skills — answers that land',
+      'p4-f3': 'Team meeting engagement & contribution', 'p4-f4': 'Expressing ideas clearly & confidently in English',
+      'p4-f5': 'Professional tone & workplace communication', 'p4-f6': 'Real practice: mock interviews & presentations',
+      'p4-f7': 'Personalised feedback after every session',
+      'p4-for': 'Perfect for: anyone who wants to be heard, taken seriously, and remembered in Australian professional settings', 'p4-btn': 'Get started',
+      // Booking
+      'book-eyebrow': 'Get started', 'book-h2': 'Ready to work together? Fill out the application form.',
+      'book-p': 'Tell me a bit about where you\'re at and what you need — I\'ll review it and follow up within 1–2 business days to confirm next steps.',
+      'book-btn': 'Fill out the application form',
+      // FAQ
+      'faq-eyebrow': 'FAQ', 'faq-h2': 'Common questions',
+      'faq-1-q': 'I\'m still studying — is it too early to start?', 'faq-1-a': 'It\'s actually the best time. Starting 6–12 months before graduation gives us room to build experience, network, and have a resume ready before you need it.',
+      'faq-2-q': 'Are sessions held in Mongolian or English?', 'faq-2-a': 'Whichever you\'re more comfortable with — many clients mix both within the same session, and that\'s completely fine.',
+      'faq-3-q': 'Can you help me get into finance or banking specifically?', 'faq-3-a': 'Yes — this is where I have the most direct experience, having worked as a Credit Analyst, Financial Viability Analyst and Consultant in Australia. I can also speak to the CFA pathway as a Level II candidate myself.',
+      'faq-4-q': 'What if I\'m not sure which package I need?', 'faq-4-a': 'That\'s exactly what the application form is for. Tell me a bit about your situation, and I\'ll follow up to recommend a package honestly — even if that means starting smaller than you expected.',
+      'faq-5-q': 'Can you help with employer sponsorship or PR-related career planning?', 'faq-5-a': 'I\'m not a registered migration agent and won\'t give visa application advice — but I do factor your visa stage into career strategy, and can refer you to a registered agent when needed.',
+      // Contact
+      'contact-eyebrow': 'Get in touch', 'contact-h3': 'Have a question before applying?',
+      'contact-p': 'Send a message and I\'ll personally reply within 1–2 business days — usually faster.',
+      'contact-label-email': 'Email', 'contact-label-based': 'Based in', 'contact-based': 'Australia — all cities welcome',
+      'form-name-label': 'Name', 'form-name-ph': 'Your name',
+      'form-email-label': 'Email',
+      'form-stage-label': 'Where are you in your journey?',
+      'form-opt1': 'Currently studying', 'form-opt2': 'Recent graduate, job searching',
+      'form-opt3': 'Working, looking to pivot', 'form-opt4': 'Other',
+      'form-msg-label': 'Message', 'form-msg-ph': 'Tell me a bit about your situation',
+      'form-btn': 'Send enquiry →',
+      // Footer
+      'footer-p': '© 2026 Allie Choijiljamba Career Coaching · Serving Mongolians across all of Australia',
+    },
+    mn: {
+      // Nav
+      'nav-about': 'Миний тухай', 'nav-services': 'Үйлчилгээ', 'nav-stories': 'Амжилтын түүхүүд',
+      'nav-pricing': 'Үнэ', 'nav-faq': 'Асуулт & Хариулт', 'nav-contact': 'Холбоо барих', 'nav-cta': 'Бүртгүүлэх',
+      // Hero
+      'hero-eyebrow': 'Карьер зөвлөгөө · Австрали дахь монголчуудад',
+      'hero-h1': 'Олон улсын оюутнаас<br><em>мэргэжлийн ажилтан</em> болтол —<br>одоо би бусдад туслаж байна.',
+      'hero-lede': 'Сиднейд ирэхдээ надад хэрэгтэй байсан тусламж — яг тэр зүйл. Австралийн ажлын зах зээлд зам мөрийг нь олохгүй байгаа монголчуудад зориулсан практик, үнэнч зөвлөгөө — CV, ярилцлага, виз, карьерийн стратеги — арав гаруй жилийн туршлага дээр үндэслэсэн.',
+      'hero-btn-primary': 'Цаг захиалах',
+      'hero-btn-secondary': 'Яаж тусалдгийг үзэх',
+      'hero-reel-tag': 'Instagram дээр үзэх',
+      'hero-cap': 'Ижил зам, зурагласан — та дангаараа олж мэдэх шаардлагагүй.',
+      // How it works
+      'how-eyebrow': 'Хэрхэн явагддаг вэ',
+      'how-h2': 'Дөрвөн алхам, эхнээс нь дуустал',
+      'how-1-h3': 'Маягт бөглөх', 'how-1-p': 'Өөрийн үндэслэл, зорилгоо надад хэлээрэй.',
+      'how-2-h3': 'Захиалгын холбоос авах', 'how-2-p': 'Маягтыг уншсаны дараа цаг сонгох холбоос илгээнэ.',
+      'how-3-h3': 'CV болон LinkedIn илгээх', 'how-3-p': 'Уулзахаас өмнө бэлтгэл хийхийн тулд.',
+      'how-4-h3': 'Google Meet дээр уулзах', 'how-4-p': 'Уулзалт бүрийн дараа тэмдэглэл, даалгавар өгнө.',
+      // About
+      'about-eyebrow': 'Миний тухай',
+      'about-h2': 'Би ижил замыг туулсан.',
+      'about-p1': 'Би Монголын хөдөөд өссөн, англи хэлийг өөрөө сурч, Macquarie Их Сургуульд Санхүүгийн Магистр хийхээр Сиднейд ирсэн. Шинэ газарт ирж, бүх зүйлийг өөрөө олж мэдэх шаардлагатай болох мэдрэмжийг би сайн мэднэ.',
+      'about-p2': 'Төгссөний дараа гурван удаа карьераа өөрчилсөн — ипотекийн зуучлалаас Equifax Australia-ийн аналитик болж, дараа нь Paxon Group-т засгийн газрын болон хувийн дэд бүтцийн төслүүдэд зөвлөх болсон. Монгол найз нөхдийн минь карьерийн асуулт байх бүрт надаас асуудаг болсон. Одоо энэ нь миний мэргэжил болсон.',
+      'about-p3': 'Уулзалтыг монгол эсвэл англи хэлээр явуулж болно — аль хэлээр илүү сайн боддогоороо.',
+      'about-stat1-n': '6+ жил', 'about-stat1-l': 'санхүү & зөвлөх',
+      'about-stat2-n': 'CFA II', 'about-stat2-l': 'нэр дэвшигч',
+      'about-stat3-n': '50+', 'about-stat3-l': 'CV & ярилцлагын хуралдаан',
+      // Services
+      'svc-eyebrow': 'Юунд туслах вэ',
+      'svc-h2': 'Зургаан чиглэл, нэг зорилго: ажилтай болох.',
+      'svc-1-h3': 'CV & Өргөдлийн захидал', 'svc-1-p': 'Австралийн стандартад нийцсэн, ATS шүүлтүүрийг давж, ажилд авагчдын анхаарлыг татах CV.',
+      'svc-2-h3': 'LinkedIn оновчлол', 'svc-2-p': 'Профайл засах, холболтын стратеги, рекрутерууд хайхад гарч ирэх арга.',
+      'svc-3-h3': 'Ярилцлагад бэлтгэх', 'svc-3-p': 'Дадлагын ярилцлага, STAR арга, австралийн ярилцлагын асуултанд хэрхэн хариулах.',
+      'svc-4-h3': 'Карьерийн стратеги & чиглэл', 'svc-4-p': 'Туршлагаа Австралийн боломжтой холбох, карьер өөрчлөлтийн төлөвлөгөө.',
+      'svc-5-h3': 'Мэргэжлийн сүлжээ бий болгох', 'svc-5-p': 'Монгол болон Австралийн мэргэжлийн нийгэмлэгтэй холбогдох, арга хэмжээнд оролцох, мэдээлэл хүсэх арга.',
+      'svc-6-h3': 'Санхүү & Зөвлөх чиглэлд орох', 'svc-6-p': 'Санхүү, банк, зөвлөх чиглэлийн мэргэжилтэн зөвлөгөө — CFA замаас эхлээд Австралид анхны аналитик ажлаа олох хүртэл.',
+      // Testimonials
+      'test-eyebrow': 'Амжилтын түүхүүд',
+      'test-h2': 'Тэдний үгнээс, минийхээс биш',
+      'test-sub': 'Зөвлөгөөг Google Meet-ээр алсаас явуулдаг — та Австралийн хаана ч байсан болно.',
+      'test-1-q': '"80 өргөдөл илгээсэн ч хариу ирсэнгүй. CV-ийг шинэчилж, ярилцлагад бэлтгэсний дараа зургаан долоо хоногт хоёр санал ирсэн."',
+      'test-1-role': 'Нягтлан бодох бүртгэлийн төгсөгч → Сидней',
+      'test-2-q': '"Визийн хугацааг зөв ойлгоход туслав. Сандрахаа болиод нөхцөлдөө тохирсон төлөвлөгөө гаргав."',
+      'test-2-role': 'МТ-ийн төгсөгч → Мельбурн',
+      'test-3-q': '"Монгол хүн учраас бүгдийг ойлгосон — бусдаас асуухаас ичдэг зүйлсийг ч. Мөнгөний үнэтэй."',
+      'test-3-role': 'Маркетингийн чиглэл өөрчлөлт → Брисбэн',
+      // Why
+      'why-eyebrow': 'Яагаад надтай хамтран ажиллах вэ',
+      'why-h2': 'Хоёр талыг ойлгодог зөвлөгөө',
+      'why-1-h3': 'Би таны яг ижил эхлэлийг туулсан', 'why-1-p': 'Ижил зам — олон улсын оюутан, ижил асуулт, ижил гэртээ хөтлөгдөх мэдрэмж. Барууны карьерийн блогоос хуулсан ерөнхий зөвлөгөө биш.',
+      'why-2-h3': 'Санхүү & зөвлөх чиглэлийн бодит туршлага', 'why-2-p': 'Австралид карьераа гурван удаа амжилттай өөрчилсөн — ипотекийн салбараас олон улсын технологийн компанийн аналитик болж, дараа нь засгийн газрын болон хувийн дэд бүтцийн төслүүдэд бодит нөлөө үзүүлж буй зөвлөх болсон. Тэр амьдарсан туршлага нь шинэ салбарт өөрийгөө байрлуулж, сонгогдоход юу шаардлагатайг би яг мэднэ гэсэн үг.',
+      'why-3-h3': 'Визийн мэдлэгтэй зөвлөгөө', 'why-3-p': 'Визийн үе шат, эрхийг тань бүх зөвлөмжид харгалзан үздэг — энийг тооцдоггүй карьерийн зөвлөгөө хэрэгтэй зөвлөгөө биш.',
+      'why-4-h3': 'Монголчуудад тохирсон үнэ & хэл', 'why-4-p': 'Монгол эсвэл англи хэлээр, оюутан, шинэ төгсөгчдөд зохисон үнэтэй багц — корпорацийн удирдлагуудад зориулсан биш.',
+      // Pricing
+      'pricing-eyebrow': 'Багц & үнэ',
+      'pricing-h2': 'Өнөөдрийн байдалдаа тохирсоноо сонгоорой',
+      'pricing-sub': 'Бүх багц товч маягт бөглөхөөс эхэлдэг — эхлэхээс өмнө таны нөхцөлийг ойлгох зорилготой.',
+      'p1-tier': 'Нэг удаагийн тодорхойлох уулзалт', 'p1-h3': 'Эхний Алхам',
+      'p1-desc': 'Хаашаа явахаа мэдэхгүй, тодорхойгүй байх үед. Буцаж харж, байгаа байдлаа тогтоож, төөрөгдлийг шуурхай ажил хийж болох тодорхой чиглэлд хувиргана.',
+      'p1-f1': '90 минутын 1:1 стратегийн уулзалт', 'p1-f2': 'Карьерийн чиглэлийн тодорхойлолт (дараа юу хийх + юугаа зогсоох)',
+      'p1-f3': 'CV & LinkedIn хурдан үнэлгээ (Австралийн зах зээлд тохирох эсэх)', 'p1-f4': 'Зорилтот ажлын байрт зориулсан байрлал тогтоолт',
+      'p1-f5': 'Одоогийн хандлагадаа үнэнч санал хүсэлт', 'p1-f6': 'Уулзалтын дараа 7 хоногийн энгийн үйлдлийн төлөвлөгөө',
+      'p1-f7': '<strong>Бонус:</strong> Ярилцлагад урилга авбал 1 нэмэлт уулзалт — тухайн ажлын байранд тохирсон практик зөвлөмж & бэлтгэл',
+      'p1-for': 'Хамгийн тохирох: оюутнууд, сүүлийн төгсөгчид, эсвэл "завсарт" гэдгийг мэдрэж байгаа хэн ч', 'p1-btn': 'Эхлэх',
+      'p2-tier': '3 уулзалтын хувиргалтын хөтөлбөр', 'p2-h3': 'Австралийн Ажлын Хурдасгагч',
+      'p2-desc': 'Австралийн зах зээлд ажил олохдоо эсвэл дээшлэхдээ цухалдаж байгаа хүмүүст — гэхдээ өөрийгөө хэрхэн байрлуулахаа мэдэхгүй байгаа. Зөвхөн CV засахгүй. Өөрийгөө танилцуулах, өргөдөл гаргах, үнэ цэнээ харуулах аргыг дахин бүтээнэ.',
+      'p2-f1': '3 × 75 минутын 1:1 дасгалжуулалтын уулзалт', 'p2-f2': 'Бүрэн CV дахин бичих удирдамж (Австралийн стандарт байрлал)',
+      'p2-f3': 'LinkedIn оновчлолын стратеги', 'p2-f4': 'Таны чиглэлд тохирсон ажил хайлтын стратеги',
+      'p2-f5': 'Дадлагын ярилцлага + санал хүсэлтийн уулзалт', 'p2-f6': '"Австралийн хэв маягийн" ярилцлагын асуултанд хэрхэн хариулах',
+      'p2-f7': 'Давтан ашиглаж болох ажлын өргөдлийн алхам алхмын систем',
+      'p2-for': 'Хамгийн тохирох: Австралид идэвхтэй өргөдөл гаргаж байгаа эсвэл бэлтгэж байгаа ажил хайгчид', 'p2-btn': 'Эхлэх',
+      'p3-tier': 'Бодит карьерийн ахиц дэвшлийн тасралтгүй дэмжлэг', 'p3-h3': 'Карьерийн Дэвшлийн Түншлэл',
+      'p3-desc': 'Зүгээр л ажил биш — Австралид карьер бүтээхэд хурд, бүтэц, хариуцлага хүсч буй хүмүүст. Бүх зүйл үнэхээр хөдлөх хүртэл хамт ажилладаг газар.',
+      'p3-f1': '4 × 75 минутын 1:1 уулзалт (4–6 долоо хоногт)', 'p3-f2': 'Зах зээлд бэлэн болтол CV + LinkedIn оновчлол',
+      'p3-f3': 'Хувийн карьерийн замын зураглал (6–12 сарын чиглэл)', 'p3-f4': 'Дадлагын ярилцлага + бодит цагийн санал хүсэлт',
+      'p3-f5': 'Уулзалтуудын хооронд WhatsApp/и-мэйл дэмжлэг', 'p3-f6': 'Долоо хоногийн ажил хайлтын тойм & тохируулга',
+      'p3-f7': 'Сүлжээлэх & байрлал тогтоох удирдамж',
+      'p3-for': 'Хамгийн тохирох: Австралид тогтвортой карьерийн зам бүтээхийг хүсч буй мэргэжилтнүүд эсвэл төгсөгчид', 'p3-btn': 'Эхлэх',
+      'p4-tier': '6 долоо хоногийн харилцааны хөтөлбөр', 'p4-h3': 'Ярих Итгэлийн Хөтөлбөр',
+      'p4-desc': 'Хаалгыг нь нэгэн зэрэг нээдэг ярих чадварыг бий болгох — ярилцлага, багийн хурал, эсвэл мэргэжлийн орчинд өөрийгөө тодорхой илэрхийлэх. Долоо хоногт хоёр удаа, 6 долоо хоногийн турш дуу хоолой, оршихуй, итгэлцэлд ажилладаг.',
+      'p4-f1': '12 × 1 цагийн уулзалт (долоо хоногт 2, 6 долоо хоног)', 'p4-f2': 'Ярилцлагын ярих чадвар — хариулт нь таарна',
+      'p4-f3': 'Багийн хурлын оролцоо & хувь нэмэр', 'p4-f4': 'Англи хэлээр тодорхой & итгэлтэйгээр санаагаа илэрхийлэх',
+      'p4-f5': 'Мэргэжлийн өнгө аяс & ажлын орчны харилцаа', 'p4-f6': 'Бодит дадлага: дадлагын ярилцлага & танилцуулга',
+      'p4-f7': 'Уулзалт бүрийн дараа хувийн санал хүсэлт',
+      'p4-for': 'Хамгийн тохирох: Австралийн мэргэжлийн орчинд сонсогдох, хүндлэгдэх, санагдуулагдахыг хүсч буй хэн ч', 'p4-btn': 'Эхлэх',
+      // Booking
+      'book-eyebrow': 'Эхлэх', 'book-h2': 'Хамт ажиллахад бэлэн үү? Өргөдлийн маягтыг бөглөөрэй.',
+      'book-p': 'Байгаа байдал, хэрэгцээгээ товч хэлж өгөөрэй — 1–2 ажлын өдрийн дотор хянаж, дараагийн алхмыг тодруулах хариу илгээнэ.',
+      'book-btn': 'Өргөдлийн маягт бөглөх',
+      // FAQ
+      'faq-eyebrow': 'Түгээмэл асуулт', 'faq-h2': 'Нийтлэг асуултууд',
+      'faq-1-q': 'Би одоо сурч байна — эрт биш үү?', 'faq-1-a': 'Үнэндээ хамгийн тохиромжтой үе. Төгсөхөөс 6–12 сарын өмнө эхэлбэл туршлага хуримтлуулах, сүлжээ бүтээх, CV бэлэн болгоход хангалттай цаг байна.',
+      'faq-2-q': 'Уулзалтыг монгол эсвэл англи хэлээр явуулах уу?', 'faq-2-a': 'Тантай илүү тохиромжтой хэлээр — олон хэрэглэгч нэг уулзалтад хоёуланг нь холилдуулдаг бөгөөд энэ нь бүрэн зөв.',
+      'faq-3-q': 'Санхүү эсвэл банкны чиглэлд ороход тусалж чадах уу?', 'faq-3-a': 'Тийм — энэ нь миний хамгийн шууд туршлагатай чиглэл, Австралид Зээлийн аналитик, Санхүүгийн чадварыг үнэлэгч, зөвлөхөөр ажилласан. CFA II нэр дэвшигч хувиар CFA замын талаар ч мэдэж байна.',
+      'faq-4-q': 'Аль багц авахаа мэдэхгүй байвал яах вэ?', 'faq-4-a': 'Яг л өргөдлийн маягт үүнд зориулагдсан. Нөхцөлөөсөө бага зэрэг хэлж өгөөрэй, би үнэнчээр санал болгоно — хүлээснээс жижиг багцаас эхлэхийг санал болгосон ч болно.',
+      'faq-5-q': 'Ажил олгогчийн ивээлт эсвэл PR холбоотой карьерийн төлөвлөгөөнд туслах уу?', 'faq-5-a': 'Би бүртгэлтэй нүүдлийн агент биш бөгөөд визийн өргөдлийн зөвлөгөө өгөхгүй — гэхдээ визийн үе шатыг карьерийн стратегид харгалздаг бөгөөд шаардлагатай бол бүртгэлтэй агент руу чиглүүлж болно.',
+      // Contact
+      'contact-eyebrow': 'Холбоо барих', 'contact-h3': 'Бүртгүүлэхийн өмнө асуулт байна уу?',
+      'contact-p': 'Мессеж илгээгээрэй, 1–2 ажлын өдрийн дотор хувийн хариу өгнө — ихэвчлэн хурдан.',
+      'contact-label-email': 'И-мэйл', 'contact-label-based': 'Байршил', 'contact-based': 'Австрали — бүх хот хамрагдана',
+      'form-name-label': 'Нэр', 'form-name-ph': 'Таны нэр',
+      'form-email-label': 'И-мэйл',
+      'form-stage-label': 'Карьерийн аяллын аль үе шатанд байна вэ?',
+      'form-opt1': 'Одоо суралцаж байна', 'form-opt2': 'Саяхан төгссөн, ажил хайж байна',
+      'form-opt3': 'Ажиллаж байна, чиглэлээ өөрчлөхийг хүсч байна', 'form-opt4': 'Бусад',
+      'form-msg-label': 'Мессеж', 'form-msg-ph': 'Нөхцөлөөсөө бага зэрэг хэлж өгөөрэй',
+      'form-btn': 'Захидал илгээх →',
+      // Footer
+      'footer-p': '© 2026 Allie Choijiljamba Карьер Зөвлөгөө · Австрали дахь монголчуудад зориулагдсан',
+      // Tips
+      'tips-eyebrow': 'Үнэгүй зөвлөмж',
+      'tips-h2': 'Монголчуудын Австралийн CV дээр гаргадаг нийтлэг алдаанууд',
+      'tips-sub': 'Захиалга хийхийн өмнө — хамгийн их харагддаг зүйлсийг энд оруулав. Эдгээрийг засвал та аппликантуудаас аль хэдийн тэргүүлж байна.',
+    }
+  };
+
+  // Map keys to DOM elements
+  const elMap = {
+    'nav-about':   () => document.querySelector('a[href="#about"]'),
+    'nav-services':() => document.querySelector('a[href="#services"]'),
+    'nav-stories': () => document.querySelector('a[href="#stories"]'),
+    'nav-pricing': () => document.querySelector('a[href="#pricing"]'),
+    'nav-faq':     () => document.querySelector('a[href="#faq"]'),
+    'nav-contact': () => document.querySelector('a[href="#contact"]'),
+    'nav-cta':     () => document.querySelector('.nav-cta'),
+    'hero-eyebrow':() => document.querySelector('.hero .eyebrow'),
+    'hero-h1':     () => document.querySelector('.hero h1'),
+    'hero-lede':   () => document.querySelector('.hero .lede'),
+    'hero-btn-primary':  () => document.querySelector('.hero .btn-primary'),
+    'hero-btn-secondary':() => document.querySelector('.hero .btn-secondary'),
+    'hero-reel-tag':() => document.querySelector('.reel-tag'),
+    'hero-cap':    () => document.querySelector('.cap'),
+    'how-eyebrow': () => document.querySelector('.how .eyebrow'),
+    'how-h2':      () => document.querySelector('.how h2'),
+    'how-1-h3':    () => document.querySelectorAll('.how-step h3')[0],
+    'how-1-p':     () => document.querySelectorAll('.how-step p')[0],
+    'how-2-h3':    () => document.querySelectorAll('.how-step h3')[1],
+    'how-2-p':     () => document.querySelectorAll('.how-step p')[1],
+    'how-3-h3':    () => document.querySelectorAll('.how-step h3')[2],
+    'how-3-p':     () => document.querySelectorAll('.how-step p')[2],
+    'how-4-h3':    () => document.querySelectorAll('.how-step h3')[3],
+    'how-4-p':     () => document.querySelectorAll('.how-step p')[3],
+    'about-eyebrow':() => document.querySelector('.about .eyebrow'),
+    'about-h2':    () => document.querySelector('.about h2'),
+    'about-p1':    () => document.querySelectorAll('.about p:not(.eyebrow)')[0],
+    'about-p2':    () => document.querySelectorAll('.about p:not(.eyebrow)')[1],
+    'about-p3':    () => document.querySelectorAll('.about p:not(.eyebrow)')[2],
+    'about-stat1-n':() => document.querySelectorAll('.about-stats .stat strong')[0],
+    'about-stat1-l':() => document.querySelectorAll('.about-stats .stat span')[0],
+    'about-stat2-n':() => document.querySelectorAll('.about-stats .stat strong')[1],
+    'about-stat2-l':() => document.querySelectorAll('.about-stats .stat span')[1],
+    'about-stat3-n':() => document.querySelectorAll('.about-stats .stat strong')[2],
+    'about-stat3-l':() => document.querySelectorAll('.about-stats .stat span')[2],
+    'svc-eyebrow': () => document.querySelector('.services .eyebrow'),
+    'svc-h2':      () => document.querySelector('.services h2'),
+    'svc-1-h3':    () => document.querySelectorAll('.service-card h3')[0],
+    'svc-1-p':     () => document.querySelectorAll('.service-card p')[0],
+    'svc-2-h3':    () => document.querySelectorAll('.service-card h3')[1],
+    'svc-2-p':     () => document.querySelectorAll('.service-card p')[1],
+    'svc-3-h3':    () => document.querySelectorAll('.service-card h3')[2],
+    'svc-3-p':     () => document.querySelectorAll('.service-card p')[2],
+    'svc-4-h3':    () => document.querySelectorAll('.service-card h3')[3],
+    'svc-4-p':     () => document.querySelectorAll('.service-card p')[3],
+    'svc-5-h3':    () => document.querySelectorAll('.service-card h3')[4],
+    'svc-5-p':     () => document.querySelectorAll('.service-card p')[4],
+    'svc-6-h3':    () => document.querySelectorAll('.service-card h3')[5],
+    'svc-6-p':     () => document.querySelectorAll('.service-card p')[5],
+    'test-eyebrow':() => document.querySelector('.testimonials .eyebrow'),
+    'test-h2':     () => document.querySelector('.testimonials h2'),
+    'test-sub':    () => document.querySelector('.testimonials .section-head > p'),
+    'test-1-q':    () => document.querySelectorAll('.quote')[0],
+    'test-1-role': () => document.querySelectorAll('.role')[0],
+    'test-2-q':    () => document.querySelectorAll('.quote')[1],
+    'test-2-role': () => document.querySelectorAll('.role')[1],
+    'test-3-q':    () => document.querySelectorAll('.quote')[2],
+    'test-3-role': () => document.querySelectorAll('.role')[2],
+    'why-eyebrow': () => document.querySelector('#why .eyebrow'),
+    'why-h2':      () => document.querySelector('#why h2'),
+    'why-1-h3':    () => document.querySelectorAll('.why-item h3')[0],
+    'why-1-p':     () => document.querySelectorAll('.why-item p')[0],
+    'why-2-h3':    () => document.querySelectorAll('.why-item h3')[1],
+    'why-2-p':     () => document.querySelectorAll('.why-item p')[1],
+    'why-3-h3':    () => document.querySelectorAll('.why-item h3')[2],
+    'why-3-p':     () => document.querySelectorAll('.why-item p')[2],
+    'why-4-h3':    () => document.querySelectorAll('.why-item h3')[3],
+    'why-4-p':     () => document.querySelectorAll('.why-item p')[3],
+    'pricing-eyebrow':() => document.querySelector('.pricing .eyebrow'),
+    'pricing-h2':  () => document.querySelector('.pricing h2'),
+    'pricing-sub': () => document.querySelector('.pricing .section-head > p'),
+    'p1-tier':     () => document.querySelectorAll('.price-card .tier')[0],
+    'p1-h3':       () => document.querySelectorAll('.price-card h3')[0],
+    'p1-desc':     () => document.querySelectorAll('.price-card .desc')[0],
+    'p1-for':      () => document.querySelectorAll('.price-card .for')[0],
+    'p1-btn':      () => document.querySelectorAll('.price-card .btn')[0],
+    'p2-tier':     () => document.querySelectorAll('.price-card .tier')[1],
+    'p2-h3':       () => document.querySelectorAll('.price-card h3')[1],
+    'p2-desc':     () => document.querySelectorAll('.price-card .desc')[1],
+    'p2-for':      () => document.querySelectorAll('.price-card .for')[1],
+    'p2-btn':      () => document.querySelectorAll('.price-card .btn')[1],
+    'p3-tier':     () => document.querySelectorAll('.price-card .tier')[2],
+    'p3-h3':       () => document.querySelectorAll('.price-card h3')[2],
+    'p3-desc':     () => document.querySelectorAll('.price-card .desc')[2],
+    'p3-for':      () => document.querySelectorAll('.price-card .for')[2],
+    'p3-btn':      () => document.querySelectorAll('.price-card .btn')[2],
+    'p4-tier':     () => document.querySelectorAll('.price-card .tier')[3],
+    'p4-h3':       () => document.querySelectorAll('.price-card h3')[3],
+    'p4-desc':     () => document.querySelectorAll('.price-card .desc')[3],
+    'p4-for':      () => document.querySelectorAll('.price-card .for')[3],
+    'p4-btn':      () => document.querySelectorAll('.price-card .btn')[3],
+    'book-eyebrow':() => document.querySelector('.booking .eyebrow'),
+    'book-h2':     () => document.querySelector('.booking h2'),
+    'book-p':      () => document.querySelector('.booking p:not(.eyebrow)'),
+    'book-btn':    () => document.querySelector('.booking .btn'),
+    'faq-eyebrow': () => document.querySelector('#faq .eyebrow'),
+    'faq-h2':      () => document.querySelector('#faq h2'),
+    'faq-1-q':     () => { const b=document.querySelectorAll('.faq-q')[0]; return b ? {set: v => { b.childNodes[0].textContent=v; }} : null; },
+    'faq-1-a':     () => document.querySelectorAll('.faq-a p')[0],
+    'faq-2-q':     () => { const b=document.querySelectorAll('.faq-q')[1]; return b ? {set: v => { b.childNodes[0].textContent=v; }} : null; },
+    'faq-2-a':     () => document.querySelectorAll('.faq-a p')[1],
+    'faq-3-q':     () => { const b=document.querySelectorAll('.faq-q')[2]; return b ? {set: v => { b.childNodes[0].textContent=v; }} : null; },
+    'faq-3-a':     () => document.querySelectorAll('.faq-a p')[2],
+    'faq-4-q':     () => { const b=document.querySelectorAll('.faq-q')[3]; return b ? {set: v => { b.childNodes[0].textContent=v; }} : null; },
+    'faq-4-a':     () => document.querySelectorAll('.faq-a p')[3],
+    'faq-5-q':     () => { const b=document.querySelectorAll('.faq-q')[4]; return b ? {set: v => { b.childNodes[0].textContent=v; }} : null; },
+    'faq-5-a':     () => document.querySelectorAll('.faq-a p')[4],
+    'contact-eyebrow':() => document.querySelector('.contact .eyebrow'),
+    'contact-h3':  () => document.querySelector('.contact h3'),
+    'contact-p':   () => document.querySelector('.contact-info > p:not(.eyebrow)'),
+    'contact-label-email':() => document.querySelectorAll('.contact-detail .label')[0],
+    'contact-label-based':() => document.querySelectorAll('.contact-detail .label')[1],
+    'contact-based':() => document.querySelectorAll('.contact-detail span:last-child')[1],
+    'form-name-label':() => document.querySelector('label[for="name"]'),
+    'form-name-ph':   () => { const el=document.getElementById('name'); return el?{set:v=>el.placeholder=v}:null; },
+    'form-email-label':() => document.querySelector('label[for="email"]'),
+    'form-stage-label':() => document.querySelector('label[for="stage"]'),
+    'form-opt1':   () => document.querySelectorAll('#stage option')[0],
+    'form-opt2':   () => document.querySelectorAll('#stage option')[1],
+    'form-opt3':   () => document.querySelectorAll('#stage option')[2],
+    'form-opt4':   () => document.querySelectorAll('#stage option')[3],
+    'form-msg-label':() => document.querySelector('label[for="msg"]'),
+    'form-msg-ph': () => { const el=document.getElementById('msg'); return el?{set:v=>el.placeholder=v}:null; },
+    'form-btn':    () => document.querySelector('.contact-form .btn'),
+    'footer-p':    () => document.querySelector('footer p'),
+  };
+
+  // Pricing list items (SVG preserved)
+  const priceListKeys = [
+    ['p1-f1','p1-f2','p1-f3','p1-f4','p1-f5','p1-f6','p1-f7'],
+    ['p2-f1','p2-f2','p2-f3','p2-f4','p2-f5','p2-f6','p2-f7'],
+    ['p3-f1','p3-f2','p3-f3','p3-f4','p3-f5','p3-f6','p3-f7'],
+    ['p4-f1','p4-f2','p4-f3','p4-f4','p4-f5','p4-f6','p4-f7'],
+  ];
+
+  function setLang(lang) {
+    const dict = T[lang];
+    // Update buttons
+    document.getElementById('btnEN').classList.toggle('active', lang==='en');
+    document.getElementById('btnMN').classList.toggle('active', lang==='mn');
+    // Update mapped elements
+    Object.keys(dict).forEach(key => {
+      if(priceListKeys.flat().includes(key)) return; // handle separately
+      const getter = elMap[key];
+      if(!getter) return;
+      const el = getter();
+      if(!el) return;
+      const val = dict[key];
+      if(typeof el.set === 'function') { el.set(val); return; }
+      if(['hero-h1'].includes(key)) { el.innerHTML = val; return; }
+      if(key.endsWith('-q') && key.startsWith('faq')) { el.set(val); return; }
+      el.innerHTML = val;
+    });
+    // Pricing list items
+    const svgStr = `<svg class="check" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="8" r="7.5" stroke="currentColor" stroke-opacity="0.3"/><path d="M4.5 8L7 10.5L11.5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+    document.querySelectorAll('.price-card').forEach((card, ci) => {
+      const keys = priceListKeys[ci];
+      if(!keys) return;
+      card.querySelectorAll('li').forEach((li, fi) => {
+        if(keys[fi] && dict[keys[fi]]) li.innerHTML = svgStr + dict[keys[fi]];
+      });
+    });
+    localStorage.setItem('lang','en'); // remember preference key
+  }
+
 </script>
 
 </body>
