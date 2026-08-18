@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog — Allie Choijiljamba Career Coaching</title>
+<meta name="description" content="Free career guides, CV tips, interview prep and job search advice for Mongolians in Australia. Written from lived experience.">
+<meta property="og:title" content="Blog — Allie Choijiljamba Career Coaching">
+<meta property="og:description" content="Free guides and real talk for Mongolians navigating the Australian job market.">
+<meta property="og:image" content="https://alliechoijiljamba.github.io/preview.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1A1A1A;
+  --paper:#FFFFFF;
+  --paper-deep:#F4F4F4;
+  --gold:#CC2B2B;
+  --gold-deep:#A81F1F;
+  --text:#1A1A1A;
+  --text-soft:#666666;
+  --line:rgba(0,0,0,0.1);
+  --white:#FFFFFF;
+  --font:'Public Sans', sans-serif;
+  --mono:'Space Mono', monospace;
+}
+*,*::before,*::after{box-sizing:border-box; margin:0; padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--font); color:var(--text); background:var(--paper); line-height:1.6;}
+ul{list-style:none;}
+a{text-decoration:none; color:inherit;}
+img{max-width:100%; display:block;}
+
+/* ---- PROGRESS BAR ---- */
+#progress-bar{position:fixed;top:0;left:0;height:3px;background:var(--gold);width:0%;z-index:200;transition:width 0.1s linear;}
+
+/* ---- NAV ---- */
+.nav{
+  display:flex; align-items:center; justify-content:space-between;
+  padding:0 32px; height:64px; max-width:1160px; margin:0 auto;
+}
+header{
+  position:sticky; top:0; z-index:50;
+  background:rgba(255,255,255,0.96);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);
+}
+.logo{font-weight:700; font-size:1rem; letter-spacing:0.01em; color:var(--ink);}
+.logo span{color:var(--gold-deep); font-style:normal; font-weight:500;}
+.nav-back{
+  display:flex; align-items:center; gap:8px;
+  font-size:0.88rem; font-weight:600; color:var(--text-soft);
+  border:1.5px solid var(--line); padding:8px 16px; border-radius:4px;
+  transition:all 0.2s;
+}
+.nav-back:hover{border-color:var(--gold); color:var(--gold);}
+.nav-cta{
+  background:var(--gold); color:var(--white);
+  padding:10px 20px; border-radius:3px;
+  font-size:0.88rem; font-weight:600;
+  transition:background 0.2s;
+}
+.nav-cta:hover{background:var(--gold-deep);}
+.nav-right{display:flex; align-items:center; gap:14px;}
+
+/* ---- WRAP ---- */
+.wrap{max-width:1160px; margin:0 auto; padding:0 32px;}
+.wrap-narrow{max-width:760px; margin:0 auto; padding:0 32px;}
+
+/* ---- HERO ---- */
+.blog-hero{
+  background:var(--paper-deep);
+  padding:64px 0 48px;
+  border-bottom:1px solid var(--line);
+}
+.blog-hero .eyebrow{
+  display:flex; align-items:center; gap:10px;
+  font-family:var(--mono); font-size:0.72rem;
+  text-transform:uppercase; letter-spacing:0.1em;
+  color:var(--gold-deep); margin-bottom:18px;
+}
+.blog-hero .eyebrow::before{content:''; width:24px; height:2px; background:var(--gold); flex-shrink:0;}
+.blog-hero h1{font-size:clamp(1.9rem,4vw,3rem); line-height:1.1; margin-bottom:16px;}
+.blog-hero p{font-size:1.05rem; color:var(--text-soft); max-width:560px;}
+
+/* ---- FILTER ---- */
+.blog-filter-bar{
+  padding:28px 0;
+  border-bottom:1px solid var(--line);
+  background:var(--white);
+  position:sticky; top:64px; z-index:40;
+}
+.filter-inner{
+  display:flex; gap:10px; flex-wrap:wrap;
+  max-width:1160px; margin:0 auto; padding:0 32px;
+}
+.filter-btn{
+  padding:8px 18px; border-radius:20px;
+  border:1.5px solid var(--line); background:transparent;
+  color:var(--text-soft); font-size:0.84rem; font-weight:600;
+  cursor:pointer; transition:all 0.2s; font-family:var(--font);
+}
+.filter-btn:hover{border-color:var(--gold); color:var(--gold);}
+.filter-btn.active{background:var(--gold); color:var(--white); border-color:var(--gold);}
+
+/* ---- ARTICLES GRID ---- */
+.articles-section{padding:56px 0;}
+.articles-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:40px;
+}
+
+/* ---- ARTICLE CARD ---- */
+.article-card{
+  background:var(--white);
+  border:1px solid var(--line);
+  border-radius:10px;
+  overflow:hidden;
+  display:flex; flex-direction:column;
+  transition:box-shadow 0.25s ease, transform 0.25s ease;
+}
+.article-card:hover{box-shadow:0 12px 40px rgba(0,0,0,0.08); transform:translateY(-3px);}
+.article-card.hidden{display:none;}
+
+.article-card-header{
+  padding:32px 32px 24px;
+  border-bottom:1px solid var(--line);
+}
+.article-meta{display:flex; align-items:center; gap:12px; margin-bottom:16px;}
+.article-tag{
+  font-size:0.72rem; font-weight:700; letter-spacing:0.06em;
+  text-transform:uppercase; padding:4px 12px; border-radius:12px;
+  background:rgba(204,43,43,0.1); color:var(--gold);
+}
+.article-tag.tag-interview{background:rgba(59,130,246,0.1);color:#2563eb;}
+.article-tag.tag-linkedin{background:rgba(16,185,129,0.1);color:#059669;}
+.article-tag.tag-career{background:rgba(139,92,246,0.1);color:#7c3aed;}
+.article-tag.tag-visa{background:rgba(245,158,11,0.1);color:#d97706;}
+.article-tag.tag-networking{background:rgba(236,72,153,0.1);color:#db2777;}
+.article-read-time{font-size:0.78rem; color:var(--text-soft);}
+.article-card h2{font-size:1.25rem; line-height:1.3; margin-bottom:12px; color:var(--ink);}
+.article-excerpt{font-size:0.95rem; color:var(--text-soft); line-height:1.65;}
+
+/* ---- ARTICLE BODY ---- */
+.article-body{padding:28px 32px 32px; flex:1; display:flex; flex-direction:column;}
+.article-body p{font-size:0.95rem; color:var(--text-soft); line-height:1.75; margin-bottom:16px;}
+.article-body h3{
+  font-size:1rem; color:var(--ink); margin:24px 0 10px;
+  padding-left:12px; border-left:3px solid var(--gold);
+}
+.article-body ul{margin-bottom:16px;}
+.article-body ul li{
+  font-size:0.92rem; color:var(--text-soft); line-height:1.65;
+  padding:8px 0; border-bottom:1px solid var(--line);
+  display:flex; gap:12px; align-items:flex-start;
+}
+.article-body ul li::before{content:"→"; color:var(--gold); flex-shrink:0; margin-top:2px;}
+.article-body ul li:last-child{border-bottom:none;}
+
+/* ---- ARTICLE FOOTER ---- */
+.article-footer{
+  padding:18px 32px 24px;
+  display:flex; align-items:center; justify-content:space-between;
+  border-top:1px solid var(--line); margin-top:auto;
+}
+.btn-book{
+  display:inline-flex; align-items:center; gap:8px;
+  background:var(--gold); color:var(--white);
+  padding:10px 22px; border-radius:4px;
+  font-size:0.88rem; font-weight:600;
+  transition:background 0.2s;
+}
+.btn-book:hover{background:var(--gold-deep);}
+.share-btn{
+  background:none; border:1.5px solid var(--line);
+  padding:8px 14px; border-radius:4px;
+  font-size:0.8rem; color:var(--text-soft);
+  cursor:pointer; font-family:var(--font);
+  transition:all 0.2s;
+}
+.share-btn:hover{border-color:var(--gold); color:var(--gold);}
+
+/* ---- CTA BAND ---- */
+.cta-band{
+  background:var(--gold); padding:60px 0; text-align:center;
+}
+.cta-band h2{color:var(--white); font-size:clamp(1.5rem,3vw,2.2rem); margin-bottom:14px;}
+.cta-band p{color:rgba(255,255,255,0.88); margin-bottom:28px; font-size:1rem;}
+.btn-white{
+  display:inline-flex; align-items:center; gap:8px;
+  background:var(--white); color:var(--gold);
+  padding:13px 28px; border-radius:4px;
+  font-size:0.95rem; font-weight:700;
+  transition:background 0.2s;
+}
+.btn-white:hover{background:var(--paper-deep);}
+
+/* ---- FOOTER ---- */
+footer{
+  background:#1A1A1A; color:rgba(255,255,255,0.55);
+  padding:36px 0; text-align:center; font-size:0.85rem;
+}
+footer a{color:var(--gold);}
+
+/* ---- RESPONSIVE ---- */
+@media(max-width:860px){
+  .articles-grid{grid-template-columns:1fr;}
+  .wrap,.wrap-narrow{padding:0 20px;}
+  .nav{padding:0 20px;}
+  .filter-inner{padding:0 20px;}
+  .blog-hero{padding:48px 0 36px;}
+}
+@media(max-width:600px){
+  .article-card-header,.article-body,.article-footer{padding-left:20px; padding-right:20px;}
+  .nav-right .nav-cta{display:none;}
+  .blog-hero h1{font-size:1.7rem;}
+}
+
+/* ---- REVEAL ---- */
+.reveal{opacity:0; transform:translateY(24px); transition:opacity 0.6s ease, transform 0.6s ease;}
+.reveal.visible{opacity:1; transform:none;}
+.reveal-delay-1{transition-delay:0.1s;}
+</style>
+</head>
+<body>
+
+<div id="progress-bar"></div>
+
+<header>
+  <nav class="nav">
+    <a href="index.html" class="logo">Allie <span>Choijiljamba</span></a>
+    <div class="nav-right">
+      <a href="index.html" class="nav-back">← Back to main site</a>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSdr41b5ghauOpWjZ7RLoDr1uQiooZAJ8KB7VbhrSd3pGXXkFg/viewform" target="_blank" rel="noopener" class="nav-cta">Book a session</a>
+    </div>
+  </nav>
+</header>
+
+<!-- HERO -->
+<div class="blog-hero">
+  <div class="wrap">
+    <p class="eyebrow">Free resources</p>
+    <h1>Guides, tips & real talk for Mongolians in Australia</h1>
+    <p>No fluff. No generic advice. Every article is written from lived experience navigating the Australian job market as a Mongolian.</p>
+  </div>
+</div>
+
+<!-- FILTER BAR -->
+<div class="blog-filter-bar">
+  <div class="filter-inner">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="cv">CV & Resume</button>
+    <button class="filter-btn" data-filter="interview">Interview</button>
+    <button class="filter-btn" data-filter="linkedin">LinkedIn</button>
+    <button class="filter-btn" data-filter="career">Career Strategy</button>
+    <button class="filter-btn" data-filter="visa">Visa & Work Rights</button>
+    <button class="filter-btn" data-filter="networking">Networking</button>
+  </div>
+</div>
+
+<!-- ARTICLES -->
+<section class="articles-section">
+  <div class="wrap">
+    <div class="articles-grid">
+
+      <!-- Article 1 -->
+      <div class="article-card reveal" id="cv-guide" data-category="cv">
+        <div class="article-card-header">
+          <div class="article-meta">
+            <span class="article-tag">CV & Resume</span>
+            <span class="article-read-time">5 min read</span>
+          </div>
+          <h2>How to write an Australian-style CV from scratch</h2>
+          <p class="article-excerpt">Australian CVs follow different rules from what you learned in Mongolia. Here's exactly what to include, what to cut, and how to make it land.</p>
+        </div>
+        <div class="article-body">
+          <p>When I first applied for jobs in Australia, I sent out the same CV I'd used in Mongolia. Weeks passed. Nothing. It wasn't because I wasn't qualified — it was because my CV was speaking the wrong language.</p>
+          <h3>What Australian CVs must have</h3>
+          <ul>
+            <li>Full name, email, phone, LinkedIn URL, and city (not full address)</li>
+            <li>A 2–4 sentence professional summary at the top tailored to the role</li>
+            <li>Work experience in reverse chronological order with bullet achievements (not duties)</li>
+            <li>Education with your GPA if it's strong (3.0+ is worth including)</li>
+            <li>Relevant skills section — especially technical tools if you're in finance, tech or analytics</li>
+          </ul>
+          <h3>What to remove</h3>
+          <ul>
+            <li>Your photo — not expected in Australia and can invite unconscious bias</li>
+            <li>Date of birth, marital status, nationality — illegal for employers to discriminate on these</li>
+            <li>References on the CV itself — "references available on request" is enough</li>
+            <li>Anything older than 10 years unless it's directly relevant</li>
+          </ul>
+          <h3>The achievement formula that works</h3>
+          <p>Instead of: "Responsible for preparing financial reports" — write: "Prepared monthly financial reports for 3 business units, reducing reporting time by 20% through process improvements."</p>
+          <p>The formula: <strong>Action verb + what you did + the result or scale.</strong></p>
+          <p>Finally, always add a one-line description of your employer if it's a Mongolian company. Recruiters here won't know them: "TDB Mongolia — largest commercial bank in Mongolia, 2,000+ employees."</p>
+        </div>
+        <div class="article-footer">
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSdr41b5ghauOpWjZ7RLoDr1uQiooZAJ8KB7VbhrSd3pGXXkFg/viewform" target="_blank" class="btn-book">Book a CV review →</a>
+          <button class="share-btn" onclick="shareArticle('cv-guide', this)">🔗 Share</button>
+        </div>
+      </div>
+
+      <!-- Article 2 -->
+      <div class="article-card reveal reveal-delay-1" id="star-method" data-category="interview">
+        <div class="article-card-header">
+          <div class="article-meta">
+            <span class="article-tag tag-interview">Interview</span>
+            <span class="article-read-time">6 min read</span>
+          </div>
+          <h2>The STAR method: how Australians expect you to answer interview questions</h2>
+          <p class="article-excerpt">Australian interviewers ask behavioural questions — and they expect a very specific type of answer. Most Mongolian candidates lose points here without knowing why.</p>
+        </div>
+        <div class="article-body">
+          <p>Behavioural questions start with phrases like "Tell me about a time when..." or "Give me an example of...". They're common in almost every Australian interview, from graduate roles to senior positions. The expected format is STAR.</p>
+          <h3>What STAR means</h3>
+          <ul>
+            <li><strong>Situation</strong> — briefly set the scene. Where were you, what was the context?</li>
+            <li><strong>Task</strong> — what was your specific responsibility in that situation?</li>
+            <li><strong>Action</strong> — what did YOU do? This is the most important part — be specific.</li>
+            <li><strong>Result</strong> — what was the outcome? Quantify it if you can.</li>
+          </ul>
+          <h3>A common mistake Mongolian candidates make</h3>
+          <p>Many candidates describe what "we" did as a team, not what they personally did. Australians want to know your individual contribution. Replace "we solved the problem" with "I identified the issue and proposed the solution, which the team implemented."</p>
+          <h3>Practice questions to prepare with</h3>
+          <ul>
+            <li>Tell me about a time you had to deal with a difficult colleague or client</li>
+            <li>Describe a situation where you had to meet a tight deadline</li>
+            <li>Give me an example of when you took initiative on a project</li>
+            <li>Tell me about a mistake you made and what you learned from it</li>
+          </ul>
+          <p>Prepare 6–8 solid STAR stories from your experience. Most questions can be answered with a well-prepared story repositioned for the question asked.</p>
+        </div>
+        <div class="article-footer">
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSdr41b5ghauOpWjZ7RLoDr1uQiooZAJ8KB7VbhrSd3pGXXkFg/viewform" target="_blank" class="btn-book">Book interview prep →</a>
+          <button class="share-btn" onclick="shareArticle('star-method', this)">🔗 Share</button>
+        </div>
+      </div>
+
+      <!-- Article 3 -->
+      <div class="article-card reveal" id="linkedin-guide" data-category="linkedin">
+        <div class="article-card-header">
+          <div class="article-meta">
+            <span class="article-tag tag-linkedin">LinkedIn</span>
+            <span class="article-read-time">4 min read</span>
+          </div>
+          <h2>How to get noticed by Australian recruiters on LinkedIn</h2>
+          <p class="article-excerpt">Most Mongolians use LinkedIn as an online CV and nothing more. Here's how to actually use it to get recruiters coming to you.</p>
+        </div>
+        <div class="article-body">
+          <p>LinkedIn works differently to what most people think. It's not just a profile — it's a search engine. Recruiters search for candidates using keywords, location, and filters. If your profile isn't optimised, you're invisible.</p>
+          <h3>The three most important sections</h3>
+          <ul>
+            <li><strong>Headline</strong> — don't just write your job title. Write who you are and what you offer: "Financial Analyst | CFA Candidate | Specialised in credit risk & data analytics"</li>
+            <li><strong>About section</strong> — write in first person, tell your story, mention your specialisation and what you're looking for. 3–5 paragraphs.</li>
+            <li><strong>Experience bullets</strong> — same achievement format as your CV. Numbers, outcomes, impact.</li>
+          </ul>
+          <h3>Turn on "Open to Work"</h3>
+          <p>Set it to visible to recruiters only (not publicly) if you're currently employed. This puts you in recruiter searches automatically.</p>
+          <h3>Engage, don't just apply</h3>
+          <ul>
+            <li>Comment thoughtfully on posts from people in your industry — not just "great post!"</li>
+            <li>Post once a week about something you've learned or observed in your field</li>
+            <li>Connect with hiring managers after applying, with a short personalised note</li>
+          </ul>
+          <p>I've seen clients go from zero recruiter messages to multiple inbound enquiries just by rewriting their headline and About section. It makes that much difference.</p>
+        </div>
+        <div class="article-footer">
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSdr41b5ghauOpWjZ7RLoDr1uQiooZAJ8KB7VbhrSd3pGXXkFg/viewform" target="_blank" class="btn-book">Book a session →</a>
+          <button class="share-btn" onclick="shareArticle('linkedin-guide', this)">🔗 Share</button>
+        </div>
+      </div>
+
+      <!-- Article 4 -->
+      <div class="article-card reveal reveal-delay-1" id="career-pivot" data-category="career">
+        <div class="article-card-header">
+          <div class="article-meta">
+            <span class="article-tag tag-career">Career Strategy</span>
+            <span class="article-read-time">7 min read</span>
+          </div>
+          <h2>How to pivot careers in Australia — what I learned from doing it three times</h2>
+          <p class="article-excerpt">I changed industries three times in Australia. Each time felt risky. Here's what actually made each pivot work.</p>
+        </div>
+        <div class="article-body">
+          <p>My first role in Australia was in mortgage broking. Then I moved into financial analysis at a global tech company. Then into consulting on government infrastructure projects. Three different environments, three different skillsets to communicate. Here's the honest breakdown of what worked.</p>
+          <h3>Principle 1: Your story has to make sense</h3>
+          <p>Every career pivot needs a logical narrative. You can't just say "I wanted a change." You need to explain: what skills transfer, why this new direction excites you, and why you're a credible candidate despite not having direct experience. Spend time crafting this story before you apply to anything.</p>
+          <h3>Principle 2: Bridge the gap with visible proof</h3>
+          <ul>
+            <li>Take a relevant short course or certification (Coursera, CFA, LinkedIn Learning)</li>
+            <li>Do a project you can show — even a personal one counts</li>
+            <li>Volunteer or take contract work in the new field</li>
+            <li>Write about the field on LinkedIn to signal genuine interest</li>
+          </ul>
+          <h3>Principle 3: Target smaller companies first</h3>
+          <p>Large Australian corporates tend to hire for specific experience. Smaller companies are more likely to hire for potential and attitude. Get your first foot in the door there, build local experience, then move up.</p>
+          <h3>Principle 4: Be honest about the trade-off</h3>
+          <p>Most pivots involve a short-term step down in title or salary to get into a new field. That's real. Decide early if you're willing to make that trade, because if you're not, the pivot will feel impossible. For me, the long-term payoff has been worth every short-term sacrifice.</p>
+        </div>
+        <div class="article-footer">
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSdr41b5ghauOpWjZ7RLoDr1uQiooZAJ8KB7VbhrSd3pGXXkFg/viewform" target="_blank" class="btn-book">Book a strategy session →</a>
+          <button class="share-btn" onclick="shareArticle('career-pivot', this)">🔗 Share</button>
+        </div>
+      </div>
+
+      <!-- Article 5 -->
+      <div class="article-card reveal" id="visa-guide" data-category="visa">
+        <div class="article-card-header">
+          <div class="article-meta">
+            <span class="article-tag tag-visa">Visa & Work Rights</span>
+            <span class="article-read-time">5 min read</span>
+          </div>
+          <h2>Work rights in Australia: what every Mongolian student and graduate needs to know</h2>
+          <p class="article-excerpt">Visa conditions affect every career decision you make. Understanding your rights early changes how you plan — and what opportunities you can actually take.</p>
+        </div>
+        <div class="article-body">
+          <p>I'm not a migration agent and this isn't legal advice — but this is what I wish someone had explained to me clearly when I first arrived. Understanding your visa conditions shapes your entire career strategy.</p>
+          <h3>Student visa (Subclass 500)</h3>
+          <ul>
+            <li>You can work up to 48 hours per fortnight while your course is in session</li>
+            <li>Unlimited hours during official course breaks</li>
+            <li>Your employer should ask for your visa conditions before hiring — it's legal for them to check</li>
+            <li>Unpaid internships count toward your work hour limit if they're with a for-profit business</li>
+          </ul>
+          <h3>Graduate visa (Subclass 485)</h3>
+          <ul>
+            <li>Full work rights — no hour restrictions</li>
+            <li>Valid for 2–4 years depending on where you studied in Australia</li>
+            <li>This is your window to build Australian experience and transition to employer-sponsored or PR pathways</li>
+            <li>Start applying for graduate roles 6 months before you finish your degree</li>
+          </ul>
+          <h3>What this means for your career strategy</h3>
+          <p>If you're on a 485, the clock is ticking. Use this time to build meaningful Australian experience, not just any job. Target roles in your field that could lead to sponsorship or skills assessment for PR. I factor all of this into career coaching sessions — because a strategy that ignores your visa isn't a strategy.</p>
+        </div>
+        <div class="article-footer">
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSdr41b5ghauOpWjZ7RLoDr1uQiooZAJ8KB7VbhrSd3pGXXkFg/viewform" target="_blank" class="btn-book">Book a session →</a>
+          <button class="share-btn" onclick="shareArticle('visa-guide', this)">🔗 Share</button>
+        </div>
+      </div>
+
+      <!-- Article 6 -->
+      <div class="article-card reveal reveal-delay-1" id="networking-guide" data-category="networking">
+        <div class="article-card-header">
+          <div class="article-meta">
+            <span class="article-tag tag-networking">Networking</span>
+            <span class="article-read-time">4 min read</span>
+          </div>
+          <h2>Networking in Australia: why it feels different and how to do it without cringing</h2>
+          <p class="article-excerpt">In Mongolia, relationships are built over time through trust and mutual obligation. Australia has a different style — more open, and surprisingly approachable once you know the rules.</p>
+        </div>
+        <div class="article-body">
+          <p>When I first tried to "network" in Australia I felt like I was bothering people. I was wrong. Australians — especially in professional settings — are generally open to a genuine, respectful approach. The key word is genuine.</p>
+          <h3>Start with informational interviews</h3>
+          <p>An informational interview is a 20-minute coffee chat (virtual or in person) where you ask someone about their career path — not for a job. It sounds strange but it works. Most professionals say yes when asked respectfully, especially if you've done some research on their background first.</p>
+          <h3>What to say on LinkedIn when reaching out</h3>
+          <ul>
+            <li>Keep it short — 3–4 sentences maximum</li>
+            <li>Say why you're reaching out specifically to them (not a copy-paste)</li>
+            <li>Ask for a 15–20 minute chat, not for a job</li>
+            <li>Make it easy for them to say yes or no</li>
+          </ul>
+          <h3>Events worth attending</h3>
+          <ul>
+            <li>Eventbrite professional events in your city — many are free</li>
+            <li>Your university alumni events — Macquarie, UNSW, Melbourne all run them</li>
+            <li>Industry association meetups (CFA Society, FINSIA for finance)</li>
+            <li>Mongolian professional community events — don't underestimate your own network</li>
+          </ul>
+          <p>The mindset shift that helped me most: networking isn't about asking for favours. It's about building relationships before you need them. Plant seeds now, even when you don't need anything yet.</p>
+        </div>
+        <div class="article-footer">
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSdr41b5ghauOpWjZ7RLoDr1uQiooZAJ8KB7VbhrSd3pGXXkFg/viewform" target="_blank" class="btn-book">Book a session →</a>
+          <button class="share-btn" onclick="shareArticle('networking-guide', this)">🔗 Share</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-band">
+  <div class="wrap">
+    <h2>Ready to put this into action?</h2>
+    <p>Book a session and get personalised guidance for your specific situation.</p>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdr41b5ghauOpWjZ7RLoDr1uQiooZAJ8KB7VbhrSd3pGXXkFg/viewform" target="_blank" rel="noopener" class="btn-white">Book a session →</a>
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 Allie Choijiljamba Career Coaching · <a href="index.html">Back to main site</a></p>
+</footer>
+
+<script>
+  // Progress bar
+  window.addEventListener('scroll', () => {
+    const pct = window.scrollY / (document.body.scrollHeight - window.innerHeight) * 100;
+    document.getElementById('progress-bar').style.width = pct + '%';
+  }, {passive:true});
+
+  // Reveal
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); }});
+  }, {threshold:0.1});
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+  // Filter
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const f = btn.dataset.filter;
+      document.querySelectorAll('.article-card').forEach(c => {
+        c.classList.toggle('hidden', f !== 'all' && c.dataset.category !== f);
+      });
+    });
+  });
+
+  // Share
+  function shareArticle(slug, btn){
+    const url = window.location.origin + window.location.pathname + '#' + slug;
+    navigator.clipboard.writeText(url).then(() => {
+      const t = btn.textContent;
+      btn.textContent = '✓ Copied!';
+      setTimeout(() => btn.textContent = t, 1800);
+    });
+  }
+
+  // Scroll to article if hash present
+  if(window.location.hash){
+    setTimeout(() => {
+      const el = document.querySelector(window.location.hash);
+      if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
+    }, 300);
+  }
+</script>
+</body>
+</html>
